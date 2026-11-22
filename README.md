@@ -23,21 +23,6 @@ A curated list of papers on **layered representations for visual generation**: l
 
 > 💻 = code available (46/73) · Papers per year — 2020: 1 · 2021: 2 · 2022: 1 · 2023: 7 · 2024: 12 · 2025: 24 · 2026: 26
 
-## Recently Added
-
-| Added | Title | Venue | Category |
-|---|---|---|---|
-| 2026-11-22 | [Vera](https://arxiv.org/abs/2606.23610) | arXiv | Layered Video Generation & Decomposition |
-| 2026-11-22 | [Stable-Layers](https://arxiv.org/abs/2605.30257) | arXiv | Image Layer Decomposition |
-| 2026-11-22 | [MRT](https://arxiv.org/abs/2605.27235) | CVPR 2026 | Layered Image Generation |
-| 2026-11-22 | [Does Synthetic Layered Design Data Benefit Layered Design Decomposition?](https://arxiv.org/abs/2605.15167) | arXiv | Graphic Design / Vector Layers |
-| 2026-11-22 | [LiWi](https://arxiv.org/abs/2605.14552) | arXiv | Image Layer Decomposition |
-| 2026-11-22 | [RevealLayer](https://arxiv.org/abs/2605.11818) | ICML 2026 | Image Layer Decomposition |
-| 2026-11-22 | [CreatiParser](https://arxiv.org/abs/2604.19632) | arXiv | Graphic Design / Vector Layers |
-| 2026-11-22 | [PSDesigner](https://arxiv.org/abs/2603.25738) | CVPR 2026 | Graphic Design / Vector Layers |
-| 2026-11-22 | [SemLayer](https://arxiv.org/abs/2603.24039) | CVPR 2026 | Graphic Design / Vector Layers |
-| 2026-11-22 | [LaDe](https://arxiv.org/abs/2603.17965) | CVPR 2026 Workshops | Graphic Design / Vector Layers |
-
 ## Layered Image Generation
 
 _Generating transparent (RGBA) images or multiple layers directly from text / conditions._

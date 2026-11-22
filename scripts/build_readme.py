@@ -142,7 +142,7 @@ def render(cats, papers, datasets=()):
     per_year = " · ".join(f"{y}: {sum(1 for p in papers if int(p['year']) == y)}" for y in years)
     lines.append(f"> 💻 = code available ({n_code}/{len(papers)}) · Papers per year — {per_year}")
     lines.append("")
-    lines += render_recent(papers, cats)
+
 
     for c in cats:
         items = [p for p in papers if p["category"] == c["id"]]
