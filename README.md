@@ -6,17 +6,18 @@ A curated list of papers on **layered representations for visual generation**: l
 
 <!-- AUTO-GENERATED from data/papers.yaml by scripts/build_readme.py. Do not edit README.md by hand. -->
 
-**66 papers** · last updated 2026-11-22
+**68 papers · 6 public datasets** · last updated 2026-11-22
 
 ## Contents
-- [Layered Image Generation](#layered-image-generation) (16)
+- [Layered Image Generation](#layered-image-generation) (17)
 - [Image Layer Decomposition](#image-layer-decomposition) (18)
 - [Layer Composition & Harmonization](#layer-composition--harmonization) (2)
 - [Layer-aware Editing](#layer-aware-editing) (2)
 - [Layered Video Generation & Decomposition](#layered-video-generation--decomposition) (14)
 - [Graphic Design / Vector Layers](#graphic-design--vector-layers) (11)
-- [Datasets & Benchmarks](#datasets--benchmarks) (3)
+- [Dataset & Benchmark Papers](#dataset--benchmark-papers) (4)
 - [Surveys](#surveys) (0)
+- [Datasets](#datasets) (6 public, 7 announced/unclear)
 
 ## Layered Image Generation
 
@@ -24,6 +25,7 @@ _Generating transparent (RGBA) images or multiple layers directly from text / co
 
 | Year | Venue | Title | Links | Tags |
 |---|---|---|---|---|
+| 2026 | arXiv | **LASAGNA**: A Unified and Controllable Framework for Layered Image Generation with Visual Effects | [arXiv](https://arxiv.org/abs/2601.15507) [Project](https://rayjryang.github.io/LASAGNA-Page) | `image` `foreground` `background` `shadow` `reflection` |
 | 2026 | CVPR 2026 Findings | LayerFusion: Harmonized Multi-Layer Text-to-Image Generation with Generative Priors | [arXiv](https://arxiv.org/abs/2412.04460) [Project](https://layerfusion.github.io) | `image` `training-free` `transparency` `foreground` `background` |
 | 2026 | CVPR 2026 | MRT: Masked Region Transformer for Layered Image Generation and Editing at Scale | [arXiv](https://arxiv.org/abs/2605.27235) | `image` `transparency` |
 | 2026 | WACV 2026 | PSDiffusion: Harmonized Multi-Layer Image Generation via Layout and Appearance Alignment | [arXiv](https://arxiv.org/abs/2505.11468) | `image` `fine-tuned` `transparency` |
@@ -90,11 +92,11 @@ _RGBA video generation, omnimatte-style video layer decomposition, layered video
 
 | Year | Venue | Title | Links | Tags |
 |---|---|---|---|---|
+| 2026 | ICML 2026 | LayerT2V: A Unified Multi-Layer Video Generation Framework | [arXiv](https://arxiv.org/abs/2508.04228) | `video` `foreground` `background` |
 | 2026 | arXiv | Vera: A Layered Diffusion Model for Content-Preserving Video Editing | [arXiv](https://arxiv.org/abs/2606.23610) | `video` |
 | 2025 | CVPR 2025 | Generative Omnimatte: Learning to Decompose Video into Layers | [arXiv](https://arxiv.org/abs/2411.16683) | `video` `fine-tuned` `shadow` `reflection` |
 | 2025 | ICCV 2025 | LayerAnimate: Layer-level Control for Animation | [arXiv](https://arxiv.org/abs/2501.08295) [Project](https://layeranimate.github.io) | `video` `fine-tuned` `foreground` `background` |
 | 2025 | SIGGRAPH 2025 | LayerFlow: A Unified Model for Layer-aware Video Generation | [arXiv](https://arxiv.org/abs/2506.04228) [Project](https://sihuiji.github.io/LayerFlow-Page) | `video` `fine-tuned` `transparency` `foreground` `background` |
-| 2025 | arXiv | LayerT2V: A Unified Multi-Layer Video Generation Framework | [arXiv](https://arxiv.org/abs/2508.04228) | `video` `foreground` `background` |
 | 2025 | SIGGRAPH Asia 2025 | OmnimatteZero: Fast Training-free Omnimatte with Pre-trained Video Diffusion Models | [arXiv](https://arxiv.org/abs/2503.18033) | `video` `training-free` `shadow` `reflection` |
 | 2025 | CVPR 2025 | **TransPixar**: TransPixeler: Advancing Text-to-Video Generation with Transparency | [arXiv](https://arxiv.org/abs/2501.03006) [Code](https://github.com/wileewang/TransPixar) [Project](https://wileewang.github.io/TransPixar) | `video` `fine-tuned` `transparency` |
 | 2025 | arXiv | **Wan-Alpha**: Video Generation with Stable Transparency via Shiftable RGB-A Distribution Learner | [arXiv](https://arxiv.org/abs/2509.24979) [Project](https://donghaotian123.github.io/Wan-Alpha) | `video` `fine-tuned` `transparency` |
@@ -123,14 +125,15 @@ _Layered graphic design, posters, PSD/SVG-style layered outputs._
 | 2025 | ICCV 2025 | LayerTracer: Cognitive-Aligned Layered SVG Synthesis via Diffusion Transformer | [arXiv](https://arxiv.org/abs/2502.01105) [Code](https://github.com/showlab/LayerTracer) | `image` `fine-tuned` |
 | 2025 | arXiv | OmniPSD: Layered PSD Generation with Diffusion Transformer | [arXiv](https://arxiv.org/abs/2512.09247) | `image` `transparency` |
 
-## Datasets & Benchmarks
+## Dataset & Benchmark Papers
 
 _Multi-layer datasets, benchmarks and evaluation protocols._
 
 | Year | Venue | Title | Links | Tags |
 |---|---|---|---|---|
 | 2025 | arXiv | PrismLayers: Open Data for High-Quality Multi-Layer Transparent Image Generative Models | [arXiv](https://arxiv.org/abs/2505.22523) [Project](https://prism-layers.github.io) | `image` `transparency` |
-| 2025 | arXiv | Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation | [arXiv](https://arxiv.org/abs/2503.11633) | `image` `3d` `transparency` |
+| 2025 | ICCV 2025 | Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation | [arXiv](https://arxiv.org/abs/2503.11633) | `image` `3d` `transparency` |
+| 2024 | CVPR 2024 | MAGICK: A Large-scale Captioned Dataset from Matting Generated Images using Chroma Keying | [Project](https://ryanndagreat.github.io/MAGICK) | `image` `transparency` |
 | 2024 | CVPR 2024 | MULAN: A Multi Layer Annotated Dataset for Controllable Text-to-Image Generation | [arXiv](https://arxiv.org/abs/2404.02790) [Project](https://mulan-dataset.github.io) | `image` `transparency` |
 
 ## Surveys
@@ -138,6 +141,38 @@ _Multi-layer datasets, benchmarks and evaluation protocols._
 _Survey and overview papers._
 
 _No papers yet — PRs welcome!_
+
+## Datasets
+
+_Layered datasets, including data released alongside method papers. Status is re-checked by the daily agent._
+
+### Public (downloadable)
+
+| Dataset | Paper | Modality | Content | Size | License | Link | Checked |
+|---|---|---|---|---|---|---|---|
+| **Crello** | [paper](https://arxiv.org/abs/2108.01249) | design | Graphic design templates with per-element layers (pre-rendered images / text boxes) and canvas metadata | 10K–100K documents | CDLA-Permissive-2.0 | [Download](https://huggingface.co/datasets/cyberagent/crello) | 2026-11-22 |
+| **LayeredDepth** | [Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation](https://arxiv.org/abs/2503.11633) (ICCV 2025) | 3d | Multi-layer (through-glass) relative depth; real benchmark with human annotations + procedural synthetic set | 1,500 real images; 15,300 synthetic images | CC0 (images and validation annotations) | [Download](https://layereddepth.cs.princeton.edu) | 2026-11-22 |
+| **MAGICK** | [MAGICK](https://ryanndagreat.github.io/MAGICK) (CVPR 2024) | image | Single-subject generated RGBA images (alpha via chroma keying) with captions | 140K+ images, 1024x1024 | - | [Download](https://huggingface.co/datasets/OneOverZero/MAGICK) | 2026-11-22 |
+| **MuLAn** | [MuLAn](https://arxiv.org/abs/2404.02790) (CVPR 2024) | image | Natural images (COCO / LAION Aesthetics) decomposed into a background + instance RGBA layer stack with captions | 44K+ images, 100K+ instances | - | [Download](https://huggingface.co/datasets/mulan-dataset/v1.0) | 2026-11-22 |
+| **PrismLayersPro** | [PrismLayers](https://arxiv.org/abs/2505.22523) (arXiv) | image | Synthetic multi-layer transparent images; up to 50 RGBA layers per sample, each with caption and bounding box, plus whole image and base layer | 20,046 samples (21 style categories) | Apache-2.0 | [Download](https://huggingface.co/datasets/creative-graphic-design/PrismLayersPro) | 2026-11-22 |
+| **VidLayer** | [LayerT2V](https://arxiv.org/abs/2508.04228) (ICML 2026) | video | Raw video, background-only video, foreground video and foreground masks, with layer-level captions | ~50K samples (from 200K source clips) | - | [Download](https://huggingface.co/datasets/kr-cen/VidLayer) | 2026-11-22 |
+
+### Announced (release promised, not downloadable yet)
+
+| Dataset | Paper | Modality | Content | Size | License | Link | Checked |
+|---|---|---|---|---|---|---|---|
+| **AlphaBlend** | [DiffDecompose](https://arxiv.org/abs/2505.21541) (CVPR 2026) | image | Semi-transparent / transparent layer decomposition across six subtasks (flare, fog, glassware, X-ray, ...) | - | - | [Page](https://github.com/Wangzt1121/DiffDecompose) | 2026-11-22 |
+| **LASAGNA-48K / LasagnaBench** | [LASAGNA](https://arxiv.org/abs/2601.15507) (arXiv) | image | Composite + clean background + foreground layer with visual effects (shadows, reflections) and captions | 48K triplets; 242-image human-decomposed benchmark | - | [Page](https://rayjryang.github.io/LASAGNA-Page) | 2026-11-22 |
+| **LiWi-100k** | [LiWi](https://arxiv.org/abs/2605.14552) (arXiv) | image | In-the-wild photos decomposed into layers with shadows / lighting effects kept | 100K+ images | - | [Page](https://rassetmusty.github.io/LiWi) | 2026-11-22 |
+| **RefLade** | [Referring Layer Decomposition](https://arxiv.org/abs/2602.19358) (ICLR 2026) | image | Image–RGBA layer–prompt triplets for prompt-conditioned layer decomposition | 430K images, 1.11M layers (incl. 100K curated, 10K test) | - | [Page](https://yaojie-shen.github.io/project/RLD) | 2026-11-22 |
+| **RevealLayer-100K / RevealLayerBench** | [RevealLayer](https://arxiv.org/abs/2605.11818) (ICML 2026) | image | Natural images with background + per-object RGBA layers (visible and occluded parts) and boxes | 100K training tuples; 200-sample benchmark | - | [Page](https://360cvgroup.github.io/RevealLayer/) | 2026-11-22 |
+
+### Status unclear
+
+| Dataset | Paper | Modality | Content | Size | License | Link | Checked |
+|---|---|---|---|---|---|---|---|
+| **AlphaLayers** | [OmniAlpha](https://arxiv.org/abs/2511.20211) (arXiv) | image | Foreground / background / composite RGBA triplets with masks and captions | 1,000 triplets (512x512) | - | [Page](https://github.com/Longin-Yu/OmniAlpha) | 2026-11-22 |
+| **SynLayers** | [Does Synthetic Layered Design Data Benefit Layered Design Decomposition?](https://arxiv.org/abs/2605.15167) (arXiv) | design | Fully synthetic layered graphic-design data (code and model are public; dataset link not found) | - | - | [Page](https://yanghaolin0526.github.io/SynLayers/) | 2026-11-22 |
 
 ## Contributing
 

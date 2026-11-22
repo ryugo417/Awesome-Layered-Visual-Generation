@@ -54,6 +54,26 @@ def main():
             errors.append(f"duplicate title: {p['title']}")
         titles[key] = 1
 
+    ds_file = ROOT / "data" / "datasets.yaml"
+    datasets = (yaml.safe_load(ds_file.read_text()) or {}).get("datasets") or [] if ds_file.exists() else []
+    ds_seen = set()
+    for d in datasets:
+        where = f"dataset {d.get('id', '?')}"
+        for k in ("id", "name", "modality", "status", "checked"):
+            if not d.get(k):
+                errors.append(f"{where}: missing '{k}'")
+        if d.get("id") in ds_seen:
+            errors.append(f"{where}: duplicate id")
+        ds_seen.add(d.get("id"))
+        if d.get("status") not in ("public", "announced", "unknown"):
+            errors.append(f"{where}: status must be public | announced | unknown")
+        if d.get("status") == "public" and not str(d.get("url", "")).startswith("https://"):
+            errors.append(f"{where}: public dataset needs an https url")
+        ref = str(d.get("paper", ""))
+        if ref and not ref.startswith("http") and ref not in seen:
+            errors.append(f"{where}: paper '{ref}' not found in papers.yaml")
+    print(f"{len(datasets)} datasets")
+
     for w in warnings:
         print("WARN ", w)
     for e in errors:

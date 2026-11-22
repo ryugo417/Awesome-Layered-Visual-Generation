@@ -17,7 +17,51 @@ FOOTER = ROOT / "templates" / "readme_footer.md"
 def load():
     cats = yaml.safe_load((ROOT / "data" / "categories.yaml").read_text())["categories"]
     papers = yaml.safe_load((ROOT / "data" / "papers.yaml").read_text())["papers"] or []
-    return cats, papers
+    ds_file = ROOT / "data" / "datasets.yaml"
+    datasets = (yaml.safe_load(ds_file.read_text()) or {}).get("datasets") or [] if ds_file.exists() else []
+    return cats, papers, datasets
+
+
+STATUS_TITLE = {
+    "public": "Public (downloadable)",
+    "announced": "Announced (release promised, not downloadable yet)",
+    "unknown": "Status unclear",
+}
+
+
+def paper_ref(ds, by_id):
+    ref = str(ds.get("paper", ""))
+    p = by_id.get(ref)
+    if p:
+        label = p.get("short") or p["title"]
+        link = p.get("arxiv") or p.get("project") or ""
+        return f"[{esc(label)}]({link}) ({esc(p['venue'])})" if link else f"{esc(label)} ({esc(p['venue'])})"
+    if ref.startswith("http"):
+        return f"[paper]({ref})"
+    return "-"
+
+
+def render_datasets(datasets, papers):
+    if not datasets:
+        return []
+    by_id = {str(p["id"]): p for p in papers}
+    lines = ["## Datasets", "",
+             "_Layered datasets, including data released alongside method papers. Status is re-checked by the daily agent._", ""]
+    for status in ["public", "announced", "unknown"]:
+        items = [d for d in datasets if d.get("status") == status]
+        if not items:
+            continue
+        lines.append(f"### {STATUS_TITLE[status]}")
+        lines.append("")
+        lines.append("| Dataset | Paper | Modality | Content | Size | License | Link | Checked |")
+        lines.append("|---|---|---|---|---|---|---|---|")
+        for d in sorted(items, key=lambda d: d["name"].lower()):
+            link = f"[{'Download' if status == 'public' else 'Page'}]({d['url']})" if d.get("url") else "-"
+            lines.append(
+                f"| **{esc(d['name'])}** | {paper_ref(d, by_id)} | {d.get('modality', '-')} | {esc(d.get('content', '-'))} "
+                f"| {esc(d.get('size', '-'))} | {esc(d.get('license', '-'))} | {link} | {d.get('checked', '-')} |")
+        lines.append("")
+    return lines
 
 
 def links(p):
@@ -35,15 +79,19 @@ def esc(s):
     return str(s).replace("|", "\\|")
 
 
-def render(cats, papers):
+def render(cats, papers, datasets=()):
     lines = [HEADER.read_text().rstrip(), ""]
-    lines.append(f"**{len(papers)} papers** · last updated {max((str(p.get('added', '')) for p in papers), default='-')}")
+    n_pub = sum(1 for d in datasets if d.get("status") == "public")
+    lines.append(f"**{len(papers)} papers · {n_pub} public datasets** · last updated "
+                 f"{max([str(p.get('added', '')) for p in papers] + [str(d.get('checked', '')) for d in datasets], default='-')}")
     lines.append("")
     lines.append("## Contents")
     for c in cats:
         n = sum(1 for p in papers if p["category"] == c["id"])
         anchor = c["title"].lower().replace(" ", "-").replace("&", "").replace("/", "")
         lines.append(f"- [{c['title']}](#{anchor}) ({n})")
+    if datasets:
+        lines.append(f"- [Datasets](#datasets) ({n_pub} public, {len(datasets) - n_pub} announced/unclear)")
     lines.append("")
 
     for c in cats:
@@ -67,14 +115,15 @@ def render(cats, papers):
             lines.append(f"| {p['year']} | {esc(p['venue'])} | {title} | {links(p)} | {tags} |")
         lines.append("")
 
+    lines += render_datasets(datasets, papers)
     lines.append(FOOTER.read_text().rstrip())
     lines.append("")
     return "\n".join(lines)
 
 
 def main():
-    cats, papers = load()
-    out = render(cats, papers)
+    cats, papers, datasets = load()
+    out = render(cats, papers, datasets)
     readme = ROOT / "README.md"
     if "--check" in sys.argv:
         if not readme.exists() or readme.read_text() != out:

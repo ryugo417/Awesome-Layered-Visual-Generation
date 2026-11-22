@@ -20,7 +20,7 @@ categories:
     title: Graphic Design / Vector Layers
     description: Layered graphic design, posters, PSD/SVG-style layered outputs.
   - id: data
-    title: Datasets & Benchmarks
+    title: Dataset & Benchmark Papers
     description: Multi-layer datasets, benchmarks and evaluation protocols.
   - id: survey
     title: Surveys

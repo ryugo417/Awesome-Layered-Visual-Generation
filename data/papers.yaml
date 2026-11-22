@@ -391,7 +391,6 @@ papers:
     tags: [image, transparency]
     arxiv: https://arxiv.org/abs/2505.21541
     added: 2026-11-22
-    needs_check: true   # venue taken from Notion, not stated on arXiv
 
   - id: "2512.03335"
     title: "Step-by-step Layered Design Generation"
@@ -435,7 +434,6 @@ papers:
     tags: [image]
     arxiv: https://arxiv.org/abs/2602.19358
     added: 2026-11-22
-    needs_check: true   # venue taken from Notion, not stated on arXiv
 
   - id: "2605.27235"
     title: "MRT: Masked Region Transformer for Layered Image Generation and Editing at Scale"
@@ -527,7 +525,6 @@ papers:
     tags: [image, foreground, background]
     arxiv: https://arxiv.org/abs/2605.11818
     added: 2026-11-22
-    needs_check: true   # venue taken from Notion, not stated on arXiv
 
   - id: "2605.15167"
     title: "Does Synthetic Layered Design Data Benefit Layered Design Decomposition?"
@@ -576,8 +573,8 @@ papers:
     title: "LayerT2V: A Unified Multi-Layer Video Generation Framework"
     short: LayerT2V
     authors: "Guangzhao Li et al."
-    year: 2025
-    venue: "arXiv"
+    year: 2026
+    venue: "ICML 2026"
     category: video
     tags: [video, foreground, background]
     arxiv: https://arxiv.org/abs/2508.04228
@@ -765,8 +762,32 @@ papers:
     title: "Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation"
     authors: "Hongyu Wen et al."
     year: 2025
-    venue: "arXiv"
+    venue: "ICCV 2025"
     category: data
     tags: [image, 3d, transparency]
     arxiv: https://arxiv.org/abs/2503.11633
+    added: 2026-11-22
+
+  # ---- added with the datasets list 2026-11-22 ----
+  - id: magick
+    title: "MAGICK: A Large-scale Captioned Dataset from Matting Generated Images using Chroma Keying"
+    short: MAGICK
+    authors: "Ryan D. Burgert, Brian L. Price, Jason Kuen, Yijun Li, Michael S. Ryoo"
+    year: 2024
+    venue: "CVPR 2024"
+    category: data
+    tags: [image, transparency]
+    project: https://ryanndagreat.github.io/MAGICK
+    added: 2026-11-22
+
+  - id: "2601.15507"
+    title: "A Unified and Controllable Framework for Layered Image Generation with Visual Effects"
+    short: LASAGNA
+    authors: "Jinrui Yang et al."
+    year: 2026
+    venue: "arXiv"
+    category: generation
+    tags: [image, foreground, background, shadow, reflection]
+    arxiv: https://arxiv.org/abs/2601.15507
+    project: https://rayjryang.github.io/LASAGNA-Page
     added: 2026-11-22

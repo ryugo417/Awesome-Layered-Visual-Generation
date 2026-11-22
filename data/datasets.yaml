@@ -1,0 +1,148 @@
+# Layered datasets. Rendered into the "Datasets" section of README.md.
+# Includes datasets released as a by-product of method papers.
+# Fields:
+#   id        short unique slug
+#   name      dataset name
+#   paper     id in data/papers.yaml (preferred) or a URL
+#   modality  image | video | design | 3d
+#   content   what one sample contains (layers, alpha, captions, ...)
+#   size      as stated by the authors
+#   status    public    = downloadable now (link checked)
+#             announced = authors say they will release; not downloadable yet
+#             unknown   = could not confirm either way
+#   url       download / dataset page (public) or project page (announced)
+#   license   only if stated on the dataset page
+#   checked   date the status was last verified (YYYY-MM-DD)
+datasets:
+  # ---------------- public ----------------
+  - id: mulan
+    name: MuLAn
+    paper: "2404.02790"
+    modality: image
+    content: Natural images (COCO / LAION Aesthetics) decomposed into a background + instance RGBA layer stack with captions
+    size: 44K+ images, 100K+ instances
+    status: public
+    url: https://huggingface.co/datasets/mulan-dataset/v1.0
+    checked: 2026-11-22
+
+  - id: prismlayerspro
+    name: PrismLayersPro
+    paper: "2505.22523"
+    modality: image
+    content: Synthetic multi-layer transparent images; up to 50 RGBA layers per sample, each with caption and bounding box, plus whole image and base layer
+    size: 20,046 samples (21 style categories)
+    status: public
+    url: https://huggingface.co/datasets/creative-graphic-design/PrismLayersPro
+    license: Apache-2.0
+    checked: 2026-11-22
+
+  - id: magick
+    name: MAGICK
+    paper: magick
+    modality: image
+    content: Single-subject generated RGBA images (alpha via chroma keying) with captions
+    size: 140K+ images, 1024x1024
+    status: public
+    url: https://huggingface.co/datasets/OneOverZero/MAGICK
+    checked: 2026-11-22
+
+  - id: crello
+    name: Crello
+    paper: https://arxiv.org/abs/2108.01249
+    modality: design
+    content: Graphic design templates with per-element layers (pre-rendered images / text boxes) and canvas metadata
+    size: 10K–100K documents
+    status: public
+    url: https://huggingface.co/datasets/cyberagent/crello
+    license: CDLA-Permissive-2.0
+    checked: 2026-11-22
+
+  - id: vidlayer
+    name: VidLayer
+    paper: "2508.04228"
+    modality: video
+    content: Raw video, background-only video, foreground video and foreground masks, with layer-level captions
+    size: ~50K samples (from 200K source clips)
+    status: public
+    url: https://huggingface.co/datasets/kr-cen/VidLayer
+    checked: 2026-11-22
+
+  - id: layereddepth
+    name: LayeredDepth
+    paper: "2503.11633"
+    modality: 3d
+    content: Multi-layer (through-glass) relative depth; real benchmark with human annotations + procedural synthetic set
+    size: 1,500 real images; 15,300 synthetic images
+    status: public
+    url: https://layereddepth.cs.princeton.edu
+    license: CC0 (images and validation annotations)
+    checked: 2026-11-22
+
+  # ---------------- announced, not yet downloadable ----------------
+  - id: reveallayer-100k
+    name: RevealLayer-100K / RevealLayerBench
+    paper: "2605.11818"
+    modality: image
+    content: Natural images with background + per-object RGBA layers (visible and occluded parts) and boxes
+    size: 100K training tuples; 200-sample benchmark
+    status: announced
+    url: https://360cvgroup.github.io/RevealLayer/
+    checked: 2026-11-22
+
+  - id: reflade
+    name: RefLade
+    paper: "2602.19358"
+    modality: image
+    content: Image–RGBA layer–prompt triplets for prompt-conditioned layer decomposition
+    size: 430K images, 1.11M layers (incl. 100K curated, 10K test)
+    status: announced
+    url: https://yaojie-shen.github.io/project/RLD
+    checked: 2026-11-22
+
+  - id: liwi-100k
+    name: LiWi-100k
+    paper: "2605.14552"
+    modality: image
+    content: In-the-wild photos decomposed into layers with shadows / lighting effects kept
+    size: 100K+ images
+    status: announced
+    url: https://rassetmusty.github.io/LiWi
+    checked: 2026-11-22
+
+  - id: alphablend
+    name: AlphaBlend
+    paper: "2505.21541"
+    modality: image
+    content: Semi-transparent / transparent layer decomposition across six subtasks (flare, fog, glassware, X-ray, ...)
+    status: announced
+    url: https://github.com/Wangzt1121/DiffDecompose
+    checked: 2026-11-22
+
+  - id: lasagna-48k
+    name: LASAGNA-48K / LasagnaBench
+    paper: "2601.15507"
+    modality: image
+    content: Composite + clean background + foreground layer with visual effects (shadows, reflections) and captions
+    size: 48K triplets; 242-image human-decomposed benchmark
+    status: announced
+    url: https://rayjryang.github.io/LASAGNA-Page
+    checked: 2026-11-22
+
+  - id: alphalayers
+    name: AlphaLayers
+    paper: "2511.20211"
+    modality: image
+    content: Foreground / background / composite RGBA triplets with masks and captions
+    size: 1,000 triplets (512x512)
+    status: unknown
+    url: https://github.com/Longin-Yu/OmniAlpha
+    checked: 2026-11-22
+
+  - id: synlayers
+    name: SynLayers
+    paper: "2605.15167"
+    modality: design
+    content: Fully synthetic layered graphic-design data (code and model are public; dataset link not found)
+    status: unknown
+    url: https://yanghaolin0526.github.io/SynLayers/
+    checked: 2026-11-22
