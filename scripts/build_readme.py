@@ -108,6 +108,47 @@ def render_recent(papers, cats, n=10):
 
 
 SITE_DATA = ROOT / "docs" / "data.json"
+CHART = {mode: ROOT / "docs" / f"papers_per_year_{mode}.svg" for mode in ("light", "dark")}
+THEME = {  # reference palette: surface, bar, primary/secondary/muted ink, grid, baseline
+    "light": dict(surface="#fcfcfb", bar="#2a78d6", ink="#0b0b0b", ink2="#52514e", muted="#898781", grid="#e1e0d9", axis="#c3c2b7"),
+    "dark": dict(surface="#1a1a19", bar="#3987e5", ink="#f0efec", ink2="#c3c2b7", muted="#898781", grid="#2c2c2a", axis="#383835"),
+}
+
+
+def year_counts(papers):
+    years = sorted({int(p["year"]) for p in papers})
+    return [(y, sum(1 for p in papers if int(p["year"]) == y)) for y in range(years[0], years[-1] + 1)]
+
+
+def chart_svg(counts, mode):
+    t = THEME[mode]
+    W, H, L, R, T, B = 640, 220, 34, 8, 24, 30
+    pw, ph = W - L - R, H - T - B
+    vmax = max(c for _, c in counts)
+    step = 5 if vmax <= 30 else 10 if vmax <= 60 else 20
+    top = -(-vmax // step) * step
+    y = lambda v: T + ph - v / top * ph
+    slot = pw / len(counts)
+    bw = min(48, slot * 0.62)
+    font = "font-family='ui-sans-serif,-apple-system,Segoe UI,Helvetica,Arial,sans-serif'"
+    o = [f"<svg xmlns='http://www.w3.org/2000/svg' width='{W}' height='{H}' viewBox='0 0 {W} {H}' role='img' "
+         f"aria-label='Papers per year: " + ", ".join(f"{yr}: {c}" for yr, c in counts) + "'>",
+         f"<rect width='{W}' height='{H}' rx='8' fill='{t['surface']}'/>"]
+    for v in range(0, top + 1, step):
+        o.append(f"<line x1='{L}' x2='{W - R}' y1='{y(v):.1f}' y2='{y(v):.1f}' stroke='{t['grid'] if v else t['axis']}' stroke-width='1'/>")
+        o.append(f"<text x='{L - 6}' y='{y(v) + 4:.1f}' text-anchor='end' font-size='11' fill='{t['muted']}' {font}>{v}</text>")
+    for i, (yr, c) in enumerate(counts):
+        cx = L + slot * (i + 0.5)
+        x0, y0, h = cx - bw / 2, y(c), T + ph - y(c)
+        r = min(4, h, bw / 2)
+        if c:
+            o.append(f"<path d='M{x0:.1f},{T + ph:.1f} V{y0 + r:.1f} Q{x0:.1f},{y0:.1f} {x0 + r:.1f},{y0:.1f} "
+                     f"H{x0 + bw - r:.1f} Q{x0 + bw:.1f},{y0:.1f} {x0 + bw:.1f},{y0 + r:.1f} V{T + ph:.1f} Z' fill='{t['bar']}'>"
+                     f"<title>{yr}: {c} papers</title></path>")
+        o.append(f"<text x='{cx:.1f}' y='{y0 - 6:.1f}' text-anchor='middle' font-size='12' font-weight='600' fill='{t['ink2']}' {font}>{c}</text>")
+        o.append(f"<text x='{cx:.1f}' y='{H - 10}' text-anchor='middle' font-size='12' fill='{t['muted']}' {font}>{yr}</text>")
+    o.append("</svg>")
+    return "\n".join(o) + "\n"
 
 
 def site_data(cats, papers, datasets):
@@ -138,9 +179,15 @@ def render(cats, papers, datasets=()):
         lines.append(f"- [Datasets](#datasets) ({n_pub} public, {len(datasets) - n_pub} announced/unclear)")
     lines.append("")
     n_code = sum(1 for p in papers if p.get("code"))
-    years = sorted({int(p["year"]) for p in papers})
-    per_year = " · ".join(f"{y}: {sum(1 for p in papers if int(p['year']) == y)}" for y in years)
-    lines.append(f"> 💻 = code available ({n_code}/{len(papers)}) · Papers per year — {per_year}")
+    lines.append(f"> 💻 = code available ({n_code}/{len(papers)})")
+    lines.append("")
+    lines.append("**Papers per year** (by publication year; the latest year is year-to-date)")
+    lines.append("")
+    lines.append("<picture>")
+    lines.append('  <source media="(prefers-color-scheme: dark)" srcset="docs/papers_per_year_dark.svg">')
+    lines.append('  <img alt="Papers per year: ' + ", ".join(f"{y}: {c}" for y, c in year_counts(papers)) +
+                 '" src="docs/papers_per_year_light.svg" width="640">')
+    lines.append("</picture>")
     lines.append("")
 
 
@@ -178,15 +225,18 @@ def main():
     data = site_data(cats, papers, datasets)
     readme = ROOT / "README.md"
     if "--check" in sys.argv:
-        stale = [f.name for f, txt in ((readme, out), (SITE_DATA, data)) if not f.exists() or f.read_text() != txt]
+        charts = [(CHART[m], chart_svg(year_counts(papers), m)) for m in CHART]
+        stale = [f.name for f, txt in [(readme, out), (SITE_DATA, data)] + charts if not f.exists() or f.read_text() != txt]
         if stale:
             print(f"{', '.join(stale)} out of date. Run: python scripts/build_readme.py")
             sys.exit(1)
-        print("README.md and docs/data.json are up to date.")
+        print("README.md, docs/data.json and charts are up to date.")
         return
     readme.write_text(out)
     SITE_DATA.parent.mkdir(exist_ok=True)
     SITE_DATA.write_text(data)
+    for m, f in CHART.items():
+        f.write_text(chart_svg(year_counts(papers), m))
     print(f"Wrote README.md ({len(papers)} papers)")
 
 

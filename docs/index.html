@@ -22,6 +22,9 @@
   header p { margin: 0; color: var(--muted); }
   header a { color: var(--accent); }
   .stats { margin-top: 10px; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+  .chart { margin: 16px 0 0; }
+  .chart figcaption { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .chart img { max-width: 100%; height: auto; display: block; }
   main { max-width: 1100px; margin: 0 auto; padding: 0 24px 64px; }
   .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin: 12px 0 16px; }
   .tabs button { background: none; border: 0; padding: 10px 14px; font: inherit; color: var(--muted);
@@ -61,6 +64,13 @@
   <p>Papers and datasets on layered (RGBA) image &amp; video generation, decomposition, composition and editing.
      Source: <a href="https://github.com/ryugo417/Awesome-Layered-Visual-Generation">GitHub</a>.</p>
   <div class="stats" id="stats"></div>
+  <figure class="chart">
+    <figcaption>Papers per year (latest year is year-to-date)</figcaption>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="papers_per_year_dark.svg">
+      <img src="papers_per_year_light.svg" alt="Bar chart of papers per year" width="640">
+    </picture>
+  </figure>
 </header>
 <main>
   <div class="tabs" role="tablist">

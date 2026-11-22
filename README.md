@@ -21,7 +21,14 @@ A curated list of papers on **layered representations for visual generation**: l
 - [Surveys](#surveys) (0)
 - [Datasets](#datasets) (6 public, 8 announced/unclear)
 
-> 💻 = code available (46/73) · Papers per year — 2020: 1 · 2021: 2 · 2022: 1 · 2023: 7 · 2024: 12 · 2025: 24 · 2026: 26
+> 💻 = code available (46/73)
+
+**Papers per year** (by publication year; the latest year is year-to-date)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/papers_per_year_dark.svg">
+  <img alt="Papers per year: 2020: 1, 2021: 2, 2022: 1, 2023: 7, 2024: 12, 2025: 24, 2026: 26" src="docs/papers_per_year_light.svg" width="640">
+</picture>
 
 ## Layered Image Generation
 
