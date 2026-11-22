@@ -30,6 +30,7 @@ papers:
     category: generation
     tags: [image, fine-tuned, transparency]
     arxiv: https://arxiv.org/abs/2502.18364
+    code: https://github.com/microsoft/art-msra
     added: 2026-11-22
 
   - id: "2511.02580"
@@ -77,6 +78,7 @@ papers:
     category: decomposition
     tags: [image, fine-tuned, foreground, background, shadow, reflection]
     arxiv: https://arxiv.org/abs/2411.17864
+    code: https://github.com/Rayjryang/LayerDecomp
     project: https://rayjryang.github.io/LayerDecomp
     added: 2026-11-22
 
@@ -113,6 +115,7 @@ papers:
     category: video
     tags: [video, shadow, reflection]
     arxiv: https://arxiv.org/abs/2105.06993
+    code: https://github.com/erikalu/omnimatte
     added: 2026-11-22
 
   - id: "2109.11418"
@@ -137,6 +140,7 @@ papers:
     category: video
     tags: [video, fine-tuned, shadow, reflection]
     arxiv: https://arxiv.org/abs/2411.16683
+    code: https://github.com/gen-omnimatte/gen-omnimatte-public
     added: 2026-11-22
 
   - id: "2503.18033"
@@ -148,6 +152,7 @@ papers:
     category: video
     tags: [video, training-free, shadow, reflection]
     arxiv: https://arxiv.org/abs/2503.18033
+    code: https://github.com/dvirsamuel/OmnimatteZero
     added: 2026-11-22
 
   - id: "2501.03006"
@@ -245,6 +250,7 @@ papers:
     category: generation
     tags: [image, fine-tuned, transparency]
     arxiv: https://arxiv.org/abs/2505.11468
+    code: https://github.com/dingbang777/PSDiffusion
     added: 2026-11-22
 
   - id: "2505.22523"
@@ -256,6 +262,7 @@ papers:
     category: data
     tags: [image, transparency]
     arxiv: https://arxiv.org/abs/2505.22523
+    code: https://github.com/redredsheep/PrismLayers
     project: https://prism-layers.github.io
     added: 2026-11-22
 
@@ -281,6 +288,7 @@ papers:
     category: design
     tags: [image, text]
     arxiv: https://arxiv.org/abs/2509.25134
+    code: https://github.com/CyberAgentAILab/LayerD
     project: https://cyberagentailab.github.io/LayerD
     added: 2026-11-22
 
@@ -329,6 +337,7 @@ papers:
     category: video
     tags: [video, shadow, reflection]
     arxiv: https://arxiv.org/abs/2211.02145
+    code: https://github.com/jaclyngu/FactorMatte
     project: https://factormatte.github.io
     added: 2026-11-22
 
@@ -341,6 +350,7 @@ papers:
     category: video
     tags: [video, 3d, background, shadow]
     arxiv: https://arxiv.org/abs/2309.07749
+    code: https://github.com/facebookresearch/OmnimatteRF
     project: https://omnimatte-rf.github.io
     added: 2026-11-22
 
@@ -353,6 +363,7 @@ papers:
     category: video
     tags: [video, fine-tuned, foreground, background]
     arxiv: https://arxiv.org/abs/2501.08295
+    code: https://github.com/IamCreateAI/LayerAnimate
     project: https://layeranimate.github.io
     added: 2026-11-22
 
@@ -365,6 +376,7 @@ papers:
     category: video
     tags: [video, fine-tuned, transparency, foreground, background]
     arxiv: https://arxiv.org/abs/2506.04228
+    code: https://github.com/SihuiJi/LayerFlow
     project: https://sihuiji.github.io/LayerFlow-Page
     added: 2026-11-22
 
@@ -372,11 +384,12 @@ papers:
     title: "Video Generation with Stable Transparency via Shiftable RGB-A Distribution Learner"
     short: Wan-Alpha
     authors: "Haotian Dong et al."
-    year: 2025
-    venue: "arXiv"
+    year: 2026
+    venue: "CVPR 2026"
     category: video
     tags: [video, fine-tuned, transparency]
     arxiv: https://arxiv.org/abs/2509.24979
+    code: https://github.com/WeChatCV/Wan-Alpha
     project: https://donghaotian123.github.io/Wan-Alpha
     added: 2026-11-22
 
@@ -469,8 +482,8 @@ papers:
     category: design
     tags: [image]
     arxiv: https://arxiv.org/abs/2603.25738
+    code: https://github.com/FudanCVL/PSDesigner
     added: 2026-11-22
-    needs_check: true   # venue taken from Notion, not stated on arXiv
 
   - id: "2511.20996"
     title: "From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition"
@@ -526,6 +539,7 @@ papers:
     category: decomposition
     tags: [image, foreground, background]
     arxiv: https://arxiv.org/abs/2605.11818
+    code: https://github.com/360CVGroup/RevealLayer
     added: 2026-11-22
 
   - id: "2605.15167"
@@ -560,6 +574,7 @@ papers:
     category: decomposition
     tags: [image, fine-tuned]
     arxiv: https://arxiv.org/abs/2605.30257
+    code: https://github.com/Stability-AI/Stable-Layers
     added: 2026-11-22
 
   - id: "2606.23610"
@@ -582,6 +597,7 @@ papers:
     category: video
     tags: [video, foreground, background]
     arxiv: https://arxiv.org/abs/2508.04228
+    code: https://github.com/guangzhaoli/LayerT2V
     added: 2026-11-22
 
   - id: "2503.12838"
@@ -605,6 +621,7 @@ papers:
     category: editing
     tags: [image]
     arxiv: https://arxiv.org/abs/2511.08251
+    code: https://github.com/fufy1024/LayerEdit
     added: 2026-11-22
     needs_check: true   # venue taken from Notion, not stated on arXiv
 
@@ -617,6 +634,7 @@ papers:
     category: generation
     tags: [image, training-free]
     arxiv: https://arxiv.org/abs/2508.07647
+    code: https://github.com/XiaohangZhan/LaRender
     added: 2026-11-22
     needs_check: true   # venue taken from Notion, not stated on arXiv
 
@@ -628,6 +646,7 @@ papers:
     category: decomposition
     tags: [image, transparency]
     arxiv: https://arxiv.org/abs/2511.16249
+    code: https://github.com/monkek123King/CLD
     added: 2026-11-22
 
   - id: "2512.09247"
@@ -639,6 +658,7 @@ papers:
     category: design
     tags: [image, transparency]
     arxiv: https://arxiv.org/abs/2512.09247
+    code: https://github.com/showlab/OmniPSD
     added: 2026-11-22
 
   - id: "2507.09308"
@@ -650,6 +670,7 @@ papers:
     category: generation
     tags: [image, transparency]
     arxiv: https://arxiv.org/abs/2507.09308
+    code: https://github.com/o0o0o00o0/AlphaVAE
     added: 2026-11-22
 
   - id: "2511.20211"
@@ -673,8 +694,8 @@ papers:
     category: decomposition
     tags: [image]
     arxiv: https://arxiv.org/abs/2506.07738
+    code: https://github.com/Lanjiong-Li/AssetDropper
     added: 2026-11-22
-    needs_check: true   # venue taken from Notion, not stated on arXiv
 
   - id: "2505.23740"
     title: "LayerPeeler: Autoregressive Peeling for Layer-wise Image Vectorization"
@@ -685,8 +706,8 @@ papers:
     category: design
     tags: [image]
     arxiv: https://arxiv.org/abs/2505.23740
+    code: https://github.com/kingnobro/LayerPeeler
     added: 2026-11-22
-    needs_check: true   # venue taken from Notion, not stated on arXiv
 
   - id: "2406.07706"
     title: "Object-level Scene Deocclusion"
@@ -729,6 +750,7 @@ papers:
     category: decomposition
     tags: [image, light]
     arxiv: https://arxiv.org/abs/2409.13690
+    code: https://github.com/compphoto/Intrinsic
     added: 2026-11-22
 
   - id: "2405.00666"
@@ -740,6 +762,7 @@ papers:
     category: decomposition
     tags: [image, light]
     arxiv: https://arxiv.org/abs/2405.00666
+    code: https://github.com/zheng95z/rgbx
     added: 2026-11-22
 
   - id: "2301.13173"
@@ -750,6 +773,7 @@ papers:
     category: video
     tags: [video]
     arxiv: https://arxiv.org/abs/2301.13173
+    code: https://github.com/text-video-edit/shape-aware-text-driven-layered-video-editing-release
     added: 2026-11-22
     needs_check: true   # venue taken from Notion, not stated on arXiv
 
@@ -761,6 +785,7 @@ papers:
     category: decomposition
     tags: [image, light]
     arxiv: https://arxiv.org/abs/2311.12792
+    code: https://github.com/compphoto/Intrinsic
     added: 2026-11-22
 
   - id: "2503.11633"
@@ -771,6 +796,7 @@ papers:
     category: data
     tags: [image, 3d, transparency]
     arxiv: https://arxiv.org/abs/2503.11633
+    code: https://github.com/princeton-vl/LayeredDepth
     added: 2026-11-22
 
   # ---- added with the datasets list 2026-11-22 ----
@@ -854,5 +880,6 @@ papers:
     category: editing
     tags: [image, video, transparency]
     arxiv: https://arxiv.org/abs/2204.02491
+    code: https://github.com/omerbt/Text2LIVE
     added: 2026-11-22
     needs_check: true   # venue not stated on arXiv
