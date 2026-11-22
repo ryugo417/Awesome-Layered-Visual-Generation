@@ -64,15 +64,59 @@ def render_datasets(datasets, papers):
     return lines
 
 
+import re
+import json
+
+GH = re.compile(r"^https://github\.com/([^/]+)/([^/#?]+)")
+
+
+def stars_badge(url):
+    m = GH.match(url or "")
+    if not m:
+        return ""
+    owner, repo = m.group(1), m.group(2).removesuffix(".git")
+    return f" ![stars](https://img.shields.io/github/stars/{owner}/{repo}?style=flat&label=%E2%98%85&color=yellow)"
+
+
 def links(p):
     out = []
     if p.get("arxiv"):
         out.append(f"[arXiv]({p['arxiv']})")
     if p.get("code"):
-        out.append(f"[Code]({p['code']})")
+        out.append(f"[Code]({p['code']}){stars_badge(p['code'])}")
     if p.get("project"):
         out.append(f"[Project]({p['project']})")
     return " ".join(out) or "-"
+
+
+def sort_key_recent(p):
+    pid = str(p["id"])
+    return (str(p.get("added", "")), pid if re.match(r"^\d{4}\.\d{4,5}$", pid) else "0")
+
+
+def render_recent(papers, cats, n=10):
+    cat_title = {c["id"]: c["title"] for c in cats}
+    items = sorted(papers, key=sort_key_recent, reverse=True)[:n]
+    lines = ["## Recently Added", "", "| Added | Title | Venue | Category |", "|---|---|---|---|"]
+    for p in items:
+        name = p.get("short") or p["title"]
+        link = p.get("arxiv") or p.get("project") or p.get("code") or ""
+        title = f"[{esc(name)}]({link})" if link else esc(name)
+        lines.append(f"| {p.get('added', '-')} | {title} | {esc(p['venue'])} | {cat_title.get(p['category'], p['category'])} |")
+    lines.append("")
+    return lines
+
+
+SITE_DATA = ROOT / "docs" / "data.json"
+
+
+def site_data(cats, papers, datasets):
+    clean = lambda d: {k: (str(v) if k in ("added", "checked") else v) for k, v in d.items() if k != "needs_check"}
+    return (json.dumps({
+        "categories": cats,
+        "papers": [clean(p) for p in papers],
+        "datasets": [clean(d) for d in datasets],
+    }, ensure_ascii=False, indent=1) + "\n")
 
 
 def esc(s):
@@ -93,6 +137,12 @@ def render(cats, papers, datasets=()):
     if datasets:
         lines.append(f"- [Datasets](#datasets) ({n_pub} public, {len(datasets) - n_pub} announced/unclear)")
     lines.append("")
+    n_code = sum(1 for p in papers if p.get("code"))
+    years = sorted({int(p["year"]) for p in papers})
+    per_year = " · ".join(f"{y}: {sum(1 for p in papers if int(p['year']) == y)}" for y in years)
+    lines.append(f"> 💻 = code available ({n_code}/{len(papers)}) · Papers per year — {per_year}")
+    lines.append("")
+    lines += render_recent(papers, cats)
 
     for c in cats:
         items = [p for p in papers if p["category"] == c["id"]]
@@ -111,6 +161,8 @@ def render(cats, papers, datasets=()):
             title = esc(p["title"])
             if p.get("short") and p["short"].lower() not in p["title"].lower():
                 title = f"**{esc(p['short'])}**: {title}"
+            if p.get("code"):
+                title = f"{title} 💻"
             tags = " ".join(f"`{t}`" for t in p.get("tags", []))
             lines.append(f"| {p['year']} | {esc(p['venue'])} | {title} | {links(p)} | {tags} |")
         lines.append("")
@@ -124,14 +176,18 @@ def render(cats, papers, datasets=()):
 def main():
     cats, papers, datasets = load()
     out = render(cats, papers, datasets)
+    data = site_data(cats, papers, datasets)
     readme = ROOT / "README.md"
     if "--check" in sys.argv:
-        if not readme.exists() or readme.read_text() != out:
-            print("README.md is out of date. Run: python scripts/build_readme.py")
+        stale = [f.name for f, txt in ((readme, out), (SITE_DATA, data)) if not f.exists() or f.read_text() != txt]
+        if stale:
+            print(f"{', '.join(stale)} out of date. Run: python scripts/build_readme.py")
             sys.exit(1)
-        print("README.md is up to date.")
+        print("README.md and docs/data.json are up to date.")
         return
     readme.write_text(out)
+    SITE_DATA.parent.mkdir(exist_ok=True)
+    SITE_DATA.write_text(data)
     print(f"Wrote README.md ({len(papers)} papers)")
 
 

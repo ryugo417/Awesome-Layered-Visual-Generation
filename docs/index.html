@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Awesome Layered Visual Generation</title>
+<meta name="description" content="Searchable list of papers and datasets on layered image/video generation, decomposition and composition.">
+<style>
+  :root {
+    --bg: #fbfaf7; --fg: #1d1d1b; --muted: #6b6a64; --line: #e4e1d8; --card: #ffffff;
+    --accent: #2f5d50; --accent-soft: #e5efe9; --chip: #f1efe8; --warn: #8a5a00; --warn-soft: #fbf0d9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #151513; --fg: #ecebe6; --muted: #9a988f; --line: #2c2b27; --card: #1c1c19;
+            --accent: #8cc4ae; --accent-soft: #20312a; --chip: #262521; --warn: #e6b65c; --warn-soft: #302612; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 15px/1.55 ui-sans-serif, -apple-system, "Segoe UI", "Hiragino Sans", sans-serif; }
+  header { padding: 40px 24px 16px; max-width: 1100px; margin: 0 auto; }
+  h1 { font: 600 28px/1.2 ui-serif, Georgia, serif; margin: 0 0 6px; letter-spacing: -0.01em; }
+  header p { margin: 0; color: var(--muted); }
+  header a { color: var(--accent); }
+  .stats { margin-top: 10px; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+  main { max-width: 1100px; margin: 0 auto; padding: 0 24px 64px; }
+  .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin: 12px 0 16px; }
+  .tabs button { background: none; border: 0; padding: 10px 14px; font: inherit; color: var(--muted);
+                 cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+  .tabs button[aria-selected="true"] { color: var(--fg); border-color: var(--accent); font-weight: 600; }
+  .controls { display: grid; grid-template-columns: 1fr auto auto auto; gap: 8px; margin-bottom: 10px; }
+  @media (max-width: 720px) { .controls { grid-template-columns: 1fr 1fr; } .controls input[type=search] { grid-column: 1 / -1; } }
+  input[type=search], select { font: inherit; padding: 8px 10px; border: 1px solid var(--line);
+                               border-radius: 6px; background: var(--card); color: var(--fg); }
+  label.check { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 14px; white-space: nowrap; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 14px; }
+  .chip { border: 1px solid var(--line); background: var(--chip); color: var(--fg); border-radius: 999px;
+          padding: 3px 10px; font-size: 13px; cursor: pointer; }
+  .chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  .count { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+  .list { display: grid; gap: 8px; }
+  .item { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .item h3 { margin: 0 0 4px; font-size: 15px; font-weight: 600; line-height: 1.4; }
+  .item h3 .short { color: var(--accent); }
+  .meta { color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 4px 12px; }
+  .meta .venue { color: var(--fg); font-weight: 500; }
+  .links { display: flex; gap: 10px; margin-top: 6px; font-size: 13px; }
+  .links a { color: var(--accent); text-decoration: none; }
+  .links a:hover { text-decoration: underline; }
+  .tag { font-size: 12px; background: var(--chip); border-radius: 4px; padding: 0 6px; color: var(--muted); }
+  .status { font-size: 12px; border-radius: 4px; padding: 1px 7px; font-weight: 600; }
+  .status.public { background: var(--accent-soft); color: var(--accent); }
+  .status.announced, .status.unknown { background: var(--warn-soft); color: var(--warn); }
+  .empty { color: var(--muted); padding: 24px 0; }
+  footer { color: var(--muted); font-size: 13px; text-align: center; padding: 24px; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Awesome Layered Visual Generation</h1>
+  <p>Papers and datasets on layered (RGBA) image &amp; video generation, decomposition, composition and editing.
+     Source: <a href="https://github.com/ryugo417/Awesome-Layered-Visual-Generation">GitHub</a>.</p>
+  <div class="stats" id="stats"></div>
+</header>
+<main>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="papers">Papers</button>
+    <button role="tab" aria-selected="false" data-tab="datasets">Datasets</button>
+  </div>
+
+  <section id="papers-view">
+    <div class="controls">
+      <input type="search" id="q" placeholder="Search title, method, author, venue…" aria-label="Search papers">
+      <select id="year" aria-label="Year"><option value="">All years</option></select>
+      <select id="sort" aria-label="Sort">
+        <option value="year">Newest first</option>
+        <option value="added">Recently added</option>
+        <option value="title">Title A–Z</option>
+      </select>
+      <label class="check"><input type="checkbox" id="code"> Code only</label>
+    </div>
+    <div class="chips" id="cats"></div>
+    <div class="chips" id="tags"></div>
+    <div class="count" id="count"></div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section id="datasets-view" hidden>
+    <div class="controls">
+      <input type="search" id="dq" placeholder="Search datasets…" aria-label="Search datasets">
+      <select id="dstatus" aria-label="Status">
+        <option value="">All statuses</option>
+        <option value="public">Public</option>
+        <option value="announced">Announced</option>
+        <option value="unknown">Unclear</option>
+      </select>
+      <select id="dmod" aria-label="Modality"><option value="">All modalities</option></select>
+      <span></span>
+    </div>
+    <div class="count" id="dcount"></div>
+    <div class="list" id="dlist"></div>
+  </section>
+</main>
+<footer>Updated on weekdays by an AI agent, checked by the maintainer. Missing something? <a href="https://github.com/ryugo417/Awesome-Layered-Visual-Generation/issues/new?template=add_paper.yml">Open an issue</a>.</footer>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const state = { cats: new Set(), tags: new Set() };
+let DATA = { categories: [], papers: [], datasets: [] };
+
+function chip(label, set, value, onChange) {
+  const b = document.createElement("button");
+  b.className = "chip"; b.textContent = label; b.setAttribute("aria-pressed", "false");
+  b.onclick = () => {
+    set.has(value) ? set.delete(value) : set.add(value);
+    b.setAttribute("aria-pressed", set.has(value)); onChange();
+  };
+  return b;
+}
+
+function renderPapers() {
+  const q = $("#q").value.trim().toLowerCase();
+  const year = $("#year").value, codeOnly = $("#code").checked, sort = $("#sort").value;
+  const catTitle = Object.fromEntries(DATA.categories.map((c) => [c.id, c.title]));
+  let items = DATA.papers.filter((p) => {
+    if (state.cats.size && !state.cats.has(p.category)) return false;
+    if (state.tags.size && ![...state.tags].every((t) => (p.tags || []).includes(t))) return false;
+    if (year && String(p.year) !== year) return false;
+    if (codeOnly && !p.code) return false;
+    if (q) {
+      const hay = [p.title, p.short, p.authors, p.venue, p.id, ...(p.tags || [])].join(" ").toLowerCase();
+      if (!q.split(/\s+/).every((w) => hay.includes(w))) return false;
+    }
+    return true;
+  });
+  const cmp = {
+    year: (a, b) => b.year - a.year || String(b.id).localeCompare(String(a.id)),
+    added: (a, b) => String(b.added).localeCompare(String(a.added)) || String(b.id).localeCompare(String(a.id)),
+    title: (a, b) => (a.short || a.title).localeCompare(b.short || b.title),
+  }[sort];
+  items.sort(cmp);
+  $("#count").textContent = `${items.length} of ${DATA.papers.length} papers`;
+  $("#list").innerHTML = items.length ? items.map((p) => {
+    const short = p.short && !p.title.toLowerCase().includes(p.short.toLowerCase())
+      ? `<span class="short">${esc(p.short)}</span>: ` : "";
+    const links = [
+      p.arxiv && `<a href="${esc(p.arxiv)}" target="_blank" rel="noopener">arXiv</a>`,
+      p.code && `<a href="${esc(p.code)}" target="_blank" rel="noopener">💻 Code</a>`,
+      p.project && `<a href="${esc(p.project)}" target="_blank" rel="noopener">Project</a>`,
+    ].filter(Boolean).join("");
+    return `<article class="item">
+      <h3>${short}${esc(p.title)}</h3>
+      <div class="meta"><span class="venue">${esc(p.venue)}</span><span>${esc(p.authors)}</span>
+        <span>${esc(catTitle[p.category] || p.category)}</span>
+        ${(p.tags || []).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+      <div class="links">${links}</div></article>`;
+  }).join("") : `<div class="empty">No papers match these filters.</div>`;
+}
+
+function renderDatasets() {
+  const q = $("#dq").value.trim().toLowerCase(), st = $("#dstatus").value, mod = $("#dmod").value;
+  const byId = Object.fromEntries(DATA.papers.map((p) => [String(p.id), p]));
+  const order = { public: 0, announced: 1, unknown: 2 };
+  const label = { public: "Public", announced: "Announced", unknown: "Unclear" };
+  const items = DATA.datasets.filter((d) => {
+    if (st && d.status !== st) return false;
+    if (mod && d.modality !== mod) return false;
+    if (q && ![d.name, d.content, d.size, d.license].join(" ").toLowerCase().includes(q)) return false;
+    return true;
+  }).sort((a, b) => order[a.status] - order[b.status] || a.name.localeCompare(b.name));
+  $("#dcount").textContent = `${items.length} of ${DATA.datasets.length} datasets`;
+  $("#dlist").innerHTML = items.length ? items.map((d) => {
+    const p = byId[String(d.paper)];
+    const paper = p ? `${esc(p.short || p.title)} (${esc(p.venue)})` : (String(d.paper || "").startsWith("http") ? `<a href="${esc(d.paper)}">paper</a>` : "");
+    return `<article class="item">
+      <h3>${esc(d.name)} <span class="status ${esc(d.status)}">${label[d.status] || esc(d.status)}</span></h3>
+      <div class="meta"><span class="venue">${esc(d.modality)}</span>${d.size ? `<span>${esc(d.size)}</span>` : ""}
+        ${d.license ? `<span>License: ${esc(d.license)}</span>` : ""}${paper ? `<span>${paper}</span>` : ""}
+        <span>checked ${esc(d.checked)}</span></div>
+      <div style="margin-top:4px">${esc(d.content || "")}</div>
+      ${d.url ? `<div class="links"><a href="${esc(d.url)}" target="_blank" rel="noopener">${d.status === "public" ? "Download" : "Page"}</a></div>` : ""}
+    </article>`;
+  }).join("") : `<div class="empty">No datasets match these filters.</div>`;
+}
+
+document.querySelectorAll(".tabs button").forEach((b) => b.onclick = () => {
+  document.querySelectorAll(".tabs button").forEach((x) => x.setAttribute("aria-selected", x === b));
+  $("#papers-view").hidden = b.dataset.tab !== "papers";
+  $("#datasets-view").hidden = b.dataset.tab !== "datasets";
+});
+
+fetch("data.json").then((r) => r.json()).then((d) => {
+  DATA = d;
+  const pub = d.datasets.filter((x) => x.status === "public").length;
+  const code = d.papers.filter((p) => p.code).length;
+  const last = d.papers.map((p) => String(p.added)).sort().pop();
+  $("#stats").textContent = `${d.papers.length} papers · ${code} with code · ${pub} public datasets · updated ${last}`;
+  for (const c of d.categories) {
+    const n = d.papers.filter((p) => p.category === c.id).length;
+    if (n) $("#cats").append(chip(`${c.title} (${n})`, state.cats, c.id, renderPapers));
+  }
+  const tags = [...new Set(d.papers.flatMap((p) => p.tags || []))].sort();
+  for (const t of tags) $("#tags").append(chip(t, state.tags, t, renderPapers));
+  for (const y of [...new Set(d.papers.map((p) => p.year))].sort((a, b) => b - a))
+    $("#year").insertAdjacentHTML("beforeend", `<option>${y}</option>`);
+  for (const m of [...new Set(d.datasets.map((x) => x.modality))].sort())
+    $("#dmod").insertAdjacentHTML("beforeend", `<option>${esc(m)}</option>`);
+  ["#q", "#year", "#sort", "#code"].forEach((s) => $(s).addEventListener("input", renderPapers));
+  ["#dq", "#dstatus", "#dmod"].forEach((s) => $(s).addEventListener("input", renderDatasets));
+  renderPapers(); renderDatasets();
+}).catch(() => { $("#list").innerHTML = `<div class="empty">Could not load data.json.</div>`; });
+</script>
+</body>
+</html>

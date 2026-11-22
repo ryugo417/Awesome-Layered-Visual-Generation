@@ -146,3 +146,12 @@ datasets:
     status: unknown
     url: https://yanghaolin0526.github.io/SynLayers/
     checked: 2026-11-22
+
+  - id: shadow-gen-bench
+    name: Controllable Shadow Generation benchmark
+    paper: "2412.11972"
+    modality: image
+    content: Object images with shadow maps under varied light direction / softness / intensity
+    status: unknown
+    url: https://gojasper.github.io/controllable-shadow-generation-project
+    checked: 2026-11-22

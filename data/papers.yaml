@@ -390,6 +390,7 @@ papers:
     category: decomposition
     tags: [image, transparency]
     arxiv: https://arxiv.org/abs/2505.21541
+    code: https://github.com/Wangzt1121/DiffDecompose
     added: 2026-11-22
 
   - id: "2512.03335"
@@ -501,6 +502,7 @@ papers:
     category: decomposition
     tags: [image]
     arxiv: https://arxiv.org/abs/2603.14925
+    code: https://github.com/zty0304/Anime-layer-decomposition
     added: 2026-11-22
 
   - id: "2603.24039"
@@ -534,6 +536,7 @@ papers:
     category: design
     tags: [image]
     arxiv: https://arxiv.org/abs/2605.15167
+    code: https://github.com/YangHaolin0526/SynLayers
     added: 2026-11-22
 
   - id: "2602.03749"
@@ -545,6 +548,7 @@ papers:
     category: decomposition
     tags: [image]
     arxiv: https://arxiv.org/abs/2602.03749
+    code: https://github.com/shitagaki-lab/see-through
     added: 2026-11-22
 
   - id: "2605.30257"
@@ -657,6 +661,7 @@ papers:
     category: generation
     tags: [image, transparency]
     arxiv: https://arxiv.org/abs/2511.20211
+    code: https://github.com/Longin-Yu/OmniAlpha
     added: 2026-11-22
 
   - id: "2506.07738"
@@ -791,3 +796,63 @@ papers:
     arxiv: https://arxiv.org/abs/2601.15507
     project: https://rayjryang.github.io/LASAGNA-Page
     added: 2026-11-22
+
+  # ---- composition / editing backfill 2026-11-22 ----
+  - id: ic-light
+    title: "Scaling In-the-Wild Training for Diffusion-based Illumination Harmonization and Editing by Imposing Consistent Light Transport"
+    short: IC-Light
+    authors: "Lvmin Zhang, Anyi Rao, Maneesh Agrawala"
+    year: 2025
+    venue: "ICLR 2025"
+    category: composition
+    tags: [image, fine-tuned, light, foreground, background]
+    code: https://github.com/lllyasviel/IC-Light
+    added: 2026-11-22
+
+  - id: "2412.11972"
+    title: "Controllable Shadow Generation with Single-Step Diffusion Models from Synthetic Data"
+    authors: "Onur Tasar, Clément Chadebec, Benjamin Aubin"
+    year: 2025
+    venue: "arXiv"
+    category: composition
+    tags: [image, fine-tuned, shadow, light]
+    arxiv: https://arxiv.org/abs/2412.11972
+    project: https://gojasper.github.io/controllable-shadow-generation-project
+    added: 2026-11-22
+    needs_check: true   # possibly CVPR 2025; confirm
+
+  - id: "2212.00932"
+    title: "ObjectStitch: Generative Object Compositing"
+    short: ObjectStitch
+    authors: "Yizhi Song et al."
+    year: 2023
+    venue: "CVPR 2023"
+    category: composition
+    tags: [image, fine-tuned, foreground, background]
+    arxiv: https://arxiv.org/abs/2212.00932
+    added: 2026-11-22
+    needs_check: true   # venue not stated on arXiv
+
+  - id: "2411.07232"
+    title: "Add-it: Training-Free Object Insertion in Images With Pretrained Diffusion Models"
+    short: Add-it
+    authors: "Yoad Tewel, Rinon Gal, Dvir Samuel, Yuval Atzmon, Lior Wolf, Gal Chechik"
+    year: 2025
+    venue: "ICLR 2025"
+    category: composition
+    tags: [image, training-free, foreground, shadow]
+    arxiv: https://arxiv.org/abs/2411.07232
+    added: 2026-11-22
+    needs_check: true   # venue not stated on arXiv
+
+  - id: "2204.02491"
+    title: "Text2LIVE: Text-Driven Layered Image and Video Editing"
+    short: Text2LIVE
+    authors: "Omer Bar-Tal, Dolev Ofri-Amar, Rafail Fridman, Yoni Kasten, Tali Dekel"
+    year: 2022
+    venue: "ECCV 2022"
+    category: editing
+    tags: [image, video, transparency]
+    arxiv: https://arxiv.org/abs/2204.02491
+    added: 2026-11-22
+    needs_check: true   # venue not stated on arXiv

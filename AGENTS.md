@@ -4,7 +4,7 @@ This file is the instruction set for the AI agent that updates this list every w
 Owner / maintainer: Ryugo Morita (ryugo417). Report recipient: ryugo417@gmail.com.
 
 ## Ground rules
-- `data/papers.yaml` is the single source of truth. Never edit `README.md` by hand; regenerate it.
+- `data/papers.yaml` is the single source of truth. Never edit `README.md` or `docs/data.json` by hand; regenerate both with `scripts/build_readme.py` (the web page in `docs/` reads data.json).
 - Only add papers you have actually opened (arXiv abstract page or HTML). Never invent arXiv IDs, venues, authors or links.
   - `venue` = "arXiv" unless the paper page / project page / CVF / ACM page states an accepted venue.
   - Add `code` / `project` only if the URL appears on the paper or its project page.
@@ -22,6 +22,7 @@ Owner / maintainer: Ryugo Morita (ryugo417). Report recipient: ryugo417@gmail.co
    - Deduplicate by arXiv ID and by normalized title against existing entries.
 3. **Screen** each candidate against `include_if` / `exclude_if`. Open the abstract page for every candidate you keep.
 4. **Verify old entries.** For up to 5 entries with `needs_check: true`, check the venue on the CVF open-access page / conference site / project page (arXiv often has no venue). Fix any wrong field, then remove `needs_check`. If the venue cannot be confirmed, set it to "arXiv" and remove `needs_check`.
+   Also fill in a missing `code` link for up to 5 entries (only a repository linked from the paper / project page / official README).
 4b. **Backfill (until the list has 100 papers).** Also add up to 5 important OLDER papers per day that are missing (follow related-work sections and citation graphs of existing entries). Report them in a separate section "既存研究の補充" with a 2–3 line summary each (no full 落合フォーマット needed).
 5. **Add entries** to `data/papers.yaml` (fields: see the header of that file; `added` = today). Pick one `category`; tags only from `data/categories.yaml`. Respect `max_new_per_day` (keep the most relevant).
 5b. **Datasets.** For every paper added today, check the paper / project page / GitHub / Hugging Face for a released dataset or benchmark (including data released by method papers). Add it to `data/datasets.yaml`:

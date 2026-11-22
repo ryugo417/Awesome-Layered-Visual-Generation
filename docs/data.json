@@ -1,0 +1,1359 @@
+{
+ "categories": [
+  {
+   "id": "generation",
+   "title": "Layered Image Generation",
+   "description": "Generating transparent (RGBA) images or multiple layers directly from text / conditions."
+  },
+  {
+   "id": "decomposition",
+   "title": "Image Layer Decomposition",
+   "description": "Decomposing a flat RGB image into layers (foreground/background, instances, effects such as shadows and reflections)."
+  },
+  {
+   "id": "composition",
+   "title": "Layer Composition & Harmonization",
+   "description": "Inserting / compositing objects or layers into scenes, including shadow, reflection and lighting synthesis."
+  },
+  {
+   "id": "editing",
+   "title": "Layer-aware Editing",
+   "description": "Editing that operates on, or produces, layered representations."
+  },
+  {
+   "id": "video",
+   "title": "Layered Video Generation & Decomposition",
+   "description": "RGBA video generation, omnimatte-style video layer decomposition, layered video editing."
+  },
+  {
+   "id": "design",
+   "title": "Graphic Design / Vector Layers",
+   "description": "Layered graphic design, posters, PSD/SVG-style layered outputs."
+  },
+  {
+   "id": "data",
+   "title": "Dataset & Benchmark Papers",
+   "description": "Multi-layer datasets, benchmarks and evaluation protocols."
+  },
+  {
+   "id": "survey",
+   "title": "Surveys",
+   "description": "Survey and overview papers."
+  }
+ ],
+ "papers": [
+  {
+   "id": "2402.17113",
+   "title": "Transparent Image Layer Diffusion using Latent Transparency",
+   "short": "LayerDiffuse",
+   "authors": "Lvmin Zhang, Maneesh Agrawala",
+   "year": 2024,
+   "venue": "SIGGRAPH 2024",
+   "category": "generation",
+   "tags": [
+    "image",
+    "fine-tuned",
+    "transparency",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2402.17113",
+   "code": "https://github.com/lllyasviel/LayerDiffuse",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2502.18364",
+   "title": "ART: Anonymous Region Transformer for Variable Multi-Layer Transparent Image Generation",
+   "short": "ART",
+   "authors": "Yifan Pu et al.",
+   "year": 2025,
+   "venue": "CVPR 2025",
+   "category": "generation",
+   "tags": [
+    "image",
+    "fine-tuned",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2502.18364",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2511.02580",
+   "title": "TAUE: Training-free Noise Transplant and Cultivation Diffusion Model",
+   "short": "TAUE",
+   "authors": "Daichi Nagai, Ryugo Morita, Shunsuke Kitada, Hitoshi Iyatomi",
+   "year": 2026,
+   "venue": "CVPR 2026 Findings",
+   "category": "generation",
+   "tags": [
+    "image",
+    "training-free",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2511.02580",
+   "code": "https://github.com/IyatomiLab/TAUE",
+   "project": "https://iyatomilab.github.io/TAUE",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2307.09781",
+   "title": "Text2Layer: Layered Image Generation using Latent Diffusion Model",
+   "short": "Text2Layer",
+   "authors": "Xinyang Zhang, Wentian Zhao, Xin Lu, Jeff Chien",
+   "year": 2023,
+   "venue": "arXiv",
+   "category": "generation",
+   "tags": [
+    "image",
+    "fine-tuned",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2307.09781",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2303.00262",
+   "title": "Collage Diffusion",
+   "short": "Collage Diffusion",
+   "authors": "Vishnu Sarukkai et al.",
+   "year": 2023,
+   "venue": "WACV 2024",
+   "category": "composition",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2303.00262",
+   "project": "https://vsanimator.github.io/collage_diffusion",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2411.17864",
+   "title": "Generative Image Layer Decomposition with Visual Effects",
+   "short": "LayerDecomp",
+   "authors": "Jinrui Yang et al.",
+   "year": 2025,
+   "venue": "CVPR 2025",
+   "category": "decomposition",
+   "tags": [
+    "image",
+    "fine-tuned",
+    "foreground",
+    "background",
+    "shadow",
+    "reflection"
+   ],
+   "arxiv": "https://arxiv.org/abs/2411.17864",
+   "project": "https://rayjryang.github.io/LayerDecomp",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2512.15603",
+   "title": "Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition",
+   "short": "Qwen-Image-Layered",
+   "authors": "Shengming Yin et al.",
+   "year": 2026,
+   "venue": "CVPR 2026",
+   "category": "decomposition",
+   "tags": [
+    "image",
+    "fine-tuned",
+    "transparency",
+    "text"
+   ],
+   "arxiv": "https://arxiv.org/abs/2512.15603",
+   "code": "https://github.com/QwenLM/Qwen-Image-Layered",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2403.18818",
+   "title": "ObjectDrop: Bootstrapping Counterfactuals for Photorealistic Object Removal and Insertion",
+   "short": "ObjectDrop",
+   "authors": "Daniel Winter et al.",
+   "year": 2024,
+   "venue": "ECCV 2024",
+   "category": "composition",
+   "tags": [
+    "image",
+    "fine-tuned",
+    "shadow",
+    "reflection"
+   ],
+   "arxiv": "https://arxiv.org/abs/2403.18818",
+   "project": "https://objectdrop.github.io",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2105.06993",
+   "title": "Omnimatte: Associating Objects and Their Effects in Video",
+   "short": "Omnimatte",
+   "authors": "Erika Lu et al.",
+   "year": 2021,
+   "venue": "CVPR 2021",
+   "category": "video",
+   "tags": [
+    "video",
+    "shadow",
+    "reflection"
+   ],
+   "arxiv": "https://arxiv.org/abs/2105.06993",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2109.11418",
+   "title": "Layered Neural Atlases for Consistent Video Editing",
+   "short": "Layered Neural Atlases",
+   "authors": "Yoni Kasten et al.",
+   "year": 2021,
+   "venue": "SIGGRAPH Asia 2021",
+   "category": "video",
+   "tags": [
+    "video"
+   ],
+   "arxiv": "https://arxiv.org/abs/2109.11418",
+   "code": "https://github.com/ykasten/layered-neural-atlases",
+   "project": "https://layered-neural-atlases.github.io",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2411.16683",
+   "title": "Generative Omnimatte: Learning to Decompose Video into Layers",
+   "short": "Generative Omnimatte",
+   "authors": "Yao-Chih Lee et al.",
+   "year": 2025,
+   "venue": "CVPR 2025",
+   "category": "video",
+   "tags": [
+    "video",
+    "fine-tuned",
+    "shadow",
+    "reflection"
+   ],
+   "arxiv": "https://arxiv.org/abs/2411.16683",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2503.18033",
+   "title": "OmnimatteZero: Fast Training-free Omnimatte with Pre-trained Video Diffusion Models",
+   "short": "OmnimatteZero",
+   "authors": "Dvir Samuel, Matan Levy, Nir Darshan, Gal Chechik, Rami Ben-Ari",
+   "year": 2025,
+   "venue": "SIGGRAPH Asia 2025",
+   "category": "video",
+   "tags": [
+    "video",
+    "training-free",
+    "shadow",
+    "reflection"
+   ],
+   "arxiv": "https://arxiv.org/abs/2503.18033",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2501.03006",
+   "title": "TransPixeler: Advancing Text-to-Video Generation with Transparency",
+   "short": "TransPixar",
+   "authors": "Luozhou Wang et al.",
+   "year": 2025,
+   "venue": "CVPR 2025",
+   "category": "video",
+   "tags": [
+    "video",
+    "fine-tuned",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2501.03006",
+   "code": "https://github.com/wileewang/TransPixar",
+   "project": "https://wileewang.github.io/TransPixar",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2404.02790",
+   "title": "MULAN: A Multi Layer Annotated Dataset for Controllable Text-to-Image Generation",
+   "short": "MuLAn",
+   "authors": "Petru-Daniel Tudosiu et al.",
+   "year": 2024,
+   "venue": "CVPR 2024",
+   "category": "data",
+   "tags": [
+    "image",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2404.02790",
+   "project": "https://mulan-dataset.github.io",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2403.11929",
+   "title": "LayerDiff: Exploring Text-guided Multi-layered Composable Image Synthesis via Layer-Collaborative Diffusion Model",
+   "short": "LayerDiff",
+   "authors": "Runhui Huang et al.",
+   "year": 2024,
+   "venue": "ECCV 2024",
+   "category": "generation",
+   "tags": [
+    "image",
+    "fine-tuned",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2403.11929",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2412.04460",
+   "title": "LayerFusion: Harmonized Multi-Layer Text-to-Image Generation with Generative Priors",
+   "short": "LayerFusion",
+   "authors": "Yusuf Dalva et al.",
+   "year": 2026,
+   "venue": "CVPR 2026 Findings",
+   "category": "generation",
+   "tags": [
+    "image",
+    "training-free",
+    "transparency",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2412.04460",
+   "project": "https://layerfusion.github.io",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2408.14826",
+   "title": "Alfie: Democratising RGBA Image Generation With No $$$",
+   "short": "Alfie",
+   "authors": "Fabio Quattrini, Vittorio Pippi, Silvia Cascianelli, Rita Cucchiara",
+   "year": 2024,
+   "venue": "ECCV 2024 Workshops (AI4VA)",
+   "category": "generation",
+   "tags": [
+    "image",
+    "training-free",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2408.14826",
+   "code": "https://github.com/aimagelab/Alfie",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2411.15580",
+   "title": "TKG-DM: Training-free Chroma Key Content Generation Diffusion Model",
+   "short": "TKG-DM",
+   "authors": "Ryugo Morita et al.",
+   "year": 2025,
+   "venue": "CVPR 2025",
+   "category": "generation",
+   "tags": [
+    "image",
+    "training-free",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2411.15580",
+   "code": "https://github.com/ryugo417/TKG-DM",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2501.01197",
+   "title": "LayeringDiff: Layered Image Synthesis via Generation, then Disassembly with Generative Knowledge",
+   "short": "LayeringDiff",
+   "authors": "Kyoungkook Kang et al.",
+   "year": 2025,
+   "venue": "arXiv",
+   "category": "generation",
+   "tags": [
+    "image",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2501.01197",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2505.11468",
+   "title": "PSDiffusion: Harmonized Multi-Layer Image Generation via Layout and Appearance Alignment",
+   "short": "PSDiffusion",
+   "authors": "Dingbang Huang et al.",
+   "year": 2026,
+   "venue": "WACV 2026",
+   "category": "generation",
+   "tags": [
+    "image",
+    "fine-tuned",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2505.11468",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2505.22523",
+   "title": "PrismLayers: Open Data for High-Quality Multi-Layer Transparent Image Generative Models",
+   "short": "PrismLayers",
+   "authors": "Junwen Chen et al.",
+   "year": 2025,
+   "venue": "arXiv",
+   "category": "data",
+   "tags": [
+    "image",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2505.22523",
+   "project": "https://prism-layers.github.io",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2401.14398",
+   "title": "pix2gestalt: Amodal Segmentation by Synthesizing Wholes",
+   "short": "pix2gestalt",
+   "authors": "Ege Ozguroglu et al.",
+   "year": 2024,
+   "venue": "CVPR 2024",
+   "category": "decomposition",
+   "tags": [
+    "image",
+    "fine-tuned",
+    "foreground"
+   ],
+   "arxiv": "https://arxiv.org/abs/2401.14398",
+   "code": "https://github.com/cvlab-columbia/pix2gestalt",
+   "project": "https://gestalt.cs.columbia.edu",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2509.25134",
+   "title": "LayerD: Decomposing Raster Graphic Designs into Layers",
+   "short": "LayerD",
+   "authors": "Tomoyuki Suzuki, Kang-Jun Liu, Naoto Inoue, Kota Yamaguchi",
+   "year": 2025,
+   "venue": "ICCV 2025",
+   "category": "design",
+   "tags": [
+    "image",
+    "text"
+   ],
+   "arxiv": "https://arxiv.org/abs/2509.25134",
+   "project": "https://cyberagentailab.github.io/LayerD",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2502.01105",
+   "title": "LayerTracer: Cognitive-Aligned Layered SVG Synthesis via Diffusion Transformer",
+   "short": "LayerTracer",
+   "authors": "Yiren Song, Danze Chen, Mike Zheng Shou",
+   "year": 2025,
+   "venue": "ICCV 2025",
+   "category": "design",
+   "tags": [
+    "image",
+    "fine-tuned"
+   ],
+   "arxiv": "https://arxiv.org/abs/2502.01105",
+   "code": "https://github.com/showlab/LayerTracer",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2603.17965",
+   "title": "LaDe: Unified Multi-Layered Graphic Media Generation and Decomposition",
+   "short": "LaDe",
+   "authors": "Vlad-Constantin Lungu-Stan, Ionuţ Mironică, Mariana-Iuliana Georgescu",
+   "year": 2026,
+   "venue": "CVPR 2026 Workshops",
+   "category": "design",
+   "tags": [
+    "image",
+    "transparency",
+    "text"
+   ],
+   "arxiv": "https://arxiv.org/abs/2603.17965",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2009.07833",
+   "title": "Layered Neural Rendering for Retiming People in Video",
+   "short": "Layered Neural Rendering",
+   "authors": "Erika Lu et al.",
+   "year": 2020,
+   "venue": "SIGGRAPH Asia 2020",
+   "category": "video",
+   "tags": [
+    "video",
+    "shadow",
+    "reflection"
+   ],
+   "arxiv": "https://arxiv.org/abs/2009.07833",
+   "code": "https://github.com/google/retiming",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2211.02145",
+   "title": "FactorMatte: Redefining Video Matting for Re-Composition Tasks",
+   "short": "FactorMatte",
+   "authors": "Zeqi Gu, Wenqi Xian, Noah Snavely, Abe Davis",
+   "year": 2023,
+   "venue": "SIGGRAPH 2023 (TOG)",
+   "category": "video",
+   "tags": [
+    "video",
+    "shadow",
+    "reflection"
+   ],
+   "arxiv": "https://arxiv.org/abs/2211.02145",
+   "project": "https://factormatte.github.io",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2309.07749",
+   "title": "OmnimatteRF: Robust Omnimatte with 3D Background Modeling",
+   "short": "OmnimatteRF",
+   "authors": "Geng Lin et al.",
+   "year": 2023,
+   "venue": "ICCV 2023",
+   "category": "video",
+   "tags": [
+    "video",
+    "3d",
+    "background",
+    "shadow"
+   ],
+   "arxiv": "https://arxiv.org/abs/2309.07749",
+   "project": "https://omnimatte-rf.github.io",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2501.08295",
+   "title": "LayerAnimate: Layer-level Control for Animation",
+   "short": "LayerAnimate",
+   "authors": "Yuxue Yang et al.",
+   "year": 2025,
+   "venue": "ICCV 2025",
+   "category": "video",
+   "tags": [
+    "video",
+    "fine-tuned",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2501.08295",
+   "project": "https://layeranimate.github.io",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2506.04228",
+   "title": "LayerFlow: A Unified Model for Layer-aware Video Generation",
+   "short": "LayerFlow",
+   "authors": "Sihui Ji et al.",
+   "year": 2025,
+   "venue": "SIGGRAPH 2025",
+   "category": "video",
+   "tags": [
+    "video",
+    "fine-tuned",
+    "transparency",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2506.04228",
+   "project": "https://sihuiji.github.io/LayerFlow-Page",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2509.24979",
+   "title": "Video Generation with Stable Transparency via Shiftable RGB-A Distribution Learner",
+   "short": "Wan-Alpha",
+   "authors": "Haotian Dong et al.",
+   "year": 2025,
+   "venue": "arXiv",
+   "category": "video",
+   "tags": [
+    "video",
+    "fine-tuned",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2509.24979",
+   "project": "https://donghaotian123.github.io/Wan-Alpha",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2505.21541",
+   "title": "DiffDecompose: Layer-Wise Decomposition of Alpha-Composited Images via Diffusion Transformers",
+   "short": "DiffDecompose",
+   "authors": "Zitong Wang et al.",
+   "year": 2026,
+   "venue": "CVPR 2026",
+   "category": "decomposition",
+   "tags": [
+    "image",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2505.21541",
+   "code": "https://github.com/Wangzt1121/DiffDecompose",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2512.03335",
+   "title": "Step-by-step Layered Design Generation",
+   "authors": "Faizan Farooq Khan et al.",
+   "year": 2026,
+   "venue": "AAAI 2026",
+   "category": "design",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2512.03335",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2604.19632",
+   "title": "CreatiParser: Generative Image Parsing of Raster Graphic Designs into Editable Layers",
+   "short": "CreatiParser",
+   "authors": "Weidong Chen et al.",
+   "year": 2026,
+   "venue": "arXiv",
+   "category": "design",
+   "tags": [
+    "image",
+    "text"
+   ],
+   "arxiv": "https://arxiv.org/abs/2604.19632",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2605.14552",
+   "title": "LiWi: Layering in the Wild",
+   "short": "LiWi",
+   "authors": "Yu He et al.",
+   "year": 2026,
+   "venue": "arXiv",
+   "category": "decomposition",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2605.14552",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2602.19358",
+   "title": "Referring Layer Decomposition",
+   "authors": "Fangyi Chen et al.",
+   "year": 2026,
+   "venue": "ICLR 2026",
+   "category": "decomposition",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2602.19358",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2605.27235",
+   "title": "MRT: Masked Region Transformer for Layered Image Generation and Editing at Scale",
+   "short": "MRT",
+   "authors": "Zhicong Tang et al.",
+   "year": 2026,
+   "venue": "CVPR 2026",
+   "category": "generation",
+   "tags": [
+    "image",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2605.27235",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2512.14336",
+   "title": "Vector Prism: Animating Vector Graphics by Stratifying Semantic Structure",
+   "short": "Vector Prism",
+   "authors": "Jooyeol Yun, Jaegul Choo",
+   "year": 2026,
+   "venue": "CVPR 2026",
+   "category": "design",
+   "tags": [
+    "video"
+   ],
+   "arxiv": "https://arxiv.org/abs/2512.14336",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2603.25738",
+   "title": "PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow",
+   "short": "PSDesigner",
+   "authors": "Xincheng Shuai et al.",
+   "year": 2026,
+   "venue": "CVPR 2026",
+   "category": "design",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2603.25738",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2511.20996",
+   "title": "From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition",
+   "authors": "Jingxi Chen et al.",
+   "year": 2026,
+   "venue": "CVPR 2026",
+   "category": "decomposition",
+   "tags": [
+    "image",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2511.20996",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2602.20989",
+   "title": "Cycle-Consistent Tuning for Layered Image Decomposition",
+   "authors": "Zheng Gu et al.",
+   "year": 2026,
+   "venue": "CVPR 2026",
+   "category": "decomposition",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2602.20989",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2603.14925",
+   "title": "Workflow-Aware Structured Layer Decomposition for Illustration Production",
+   "authors": "Tianyu Zhang, Dongchi Li, Keiichi Sawada, Haoran Xie",
+   "year": 2026,
+   "venue": "arXiv",
+   "category": "decomposition",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2603.14925",
+   "code": "https://github.com/zty0304/Anime-layer-decomposition",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2603.24039",
+   "title": "SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons",
+   "short": "SemLayer",
+   "authors": "Haiyang Xu et al.",
+   "year": 2026,
+   "venue": "CVPR 2026",
+   "category": "design",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2603.24039",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2605.11818",
+   "title": "RevealLayer: Disentangling Hidden and Visible Layers via Occlusion-Aware Image Decomposition",
+   "short": "RevealLayer",
+   "authors": "Binhao Wang et al.",
+   "year": 2026,
+   "venue": "ICML 2026",
+   "category": "decomposition",
+   "tags": [
+    "image",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2605.11818",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2605.15167",
+   "title": "Does Synthetic Layered Design Data Benefit Layered Design Decomposition?",
+   "authors": "Kam Man Wu et al.",
+   "year": 2026,
+   "venue": "arXiv",
+   "category": "design",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2605.15167",
+   "code": "https://github.com/YangHaolin0526/SynLayers",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2602.03749",
+   "title": "See-through: Single-image Layer Decomposition for Anime Characters",
+   "short": "See-through",
+   "authors": "Jian Lin et al.",
+   "year": 2026,
+   "venue": "arXiv",
+   "category": "decomposition",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2602.03749",
+   "code": "https://github.com/shitagaki-lab/see-through",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2605.30257",
+   "title": "Stable-Layers: Fine-Tuning Image Layer Decomposition Models with VLM-Scored Reinforcement Learning",
+   "short": "Stable-Layers",
+   "authors": "Ciara Rowles et al.",
+   "year": 2026,
+   "venue": "arXiv",
+   "category": "decomposition",
+   "tags": [
+    "image",
+    "fine-tuned"
+   ],
+   "arxiv": "https://arxiv.org/abs/2605.30257",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2606.23610",
+   "title": "Vera: A Layered Diffusion Model for Content-Preserving Video Editing",
+   "short": "Vera",
+   "authors": "Hongkai Zheng et al.",
+   "year": 2026,
+   "venue": "arXiv",
+   "category": "video",
+   "tags": [
+    "video"
+   ],
+   "arxiv": "https://arxiv.org/abs/2606.23610",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2508.04228",
+   "title": "LayerT2V: A Unified Multi-Layer Video Generation Framework",
+   "short": "LayerT2V",
+   "authors": "Guangzhao Li et al.",
+   "year": 2026,
+   "venue": "ICML 2026",
+   "category": "video",
+   "tags": [
+    "video",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2508.04228",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2503.12838",
+   "title": "DreamLayer: Simultaneous Multi-Layer Generation via Diffusion Model",
+   "short": "DreamLayer",
+   "authors": "Junjia Huang et al.",
+   "year": 2025,
+   "venue": "ICCV 2025",
+   "category": "generation",
+   "tags": [
+    "image",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2503.12838",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2511.08251",
+   "title": "LayerEdit: Disentangled Multi-Object Editing via Conflict-Aware Multi-Layer Learning",
+   "short": "LayerEdit",
+   "authors": "Fengyi Fu, Mengqi Huang, Lei Zhang, Zhendong Mao",
+   "year": 2026,
+   "venue": "AAAI 2026",
+   "category": "editing",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2511.08251",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2508.07647",
+   "title": "LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering",
+   "short": "LaRender",
+   "authors": "Xiaohang Zhan, Dingming Liu",
+   "year": 2025,
+   "venue": "ICCV 2025",
+   "category": "generation",
+   "tags": [
+    "image",
+    "training-free"
+   ],
+   "arxiv": "https://arxiv.org/abs/2508.07647",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2511.16249",
+   "title": "Controllable Layer Decomposition for Reversible Multi-Layer Image Generation",
+   "authors": "Zihao Liu et al.",
+   "year": 2025,
+   "venue": "arXiv",
+   "category": "decomposition",
+   "tags": [
+    "image",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2511.16249",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2512.09247",
+   "title": "OmniPSD: Layered PSD Generation with Diffusion Transformer",
+   "short": "OmniPSD",
+   "authors": "Cheng Liu, Yiren Song, Haofan Wang, Mike Zheng Shou",
+   "year": 2025,
+   "venue": "arXiv",
+   "category": "design",
+   "tags": [
+    "image",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2512.09247",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2507.09308",
+   "title": "AlphaVAE: Unified End-to-End RGBA Image Reconstruction and Generation with Alpha-Aware Representation Learning",
+   "short": "AlphaVAE",
+   "authors": "Zile Wang, Hao Yu, Jiabo Zhan, Chun Yuan",
+   "year": 2025,
+   "venue": "arXiv",
+   "category": "generation",
+   "tags": [
+    "image",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2507.09308",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2511.20211",
+   "title": "OmniAlpha: Aligning Transparency-Aware Generation via Multi-Task Unified Reinforcement Learning",
+   "short": "OmniAlpha",
+   "authors": "Hao Yu et al.",
+   "year": 2025,
+   "venue": "arXiv",
+   "category": "generation",
+   "tags": [
+    "image",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2511.20211",
+   "code": "https://github.com/Longin-Yu/OmniAlpha",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2506.07738",
+   "title": "AssetDropper: Asset Extraction via Diffusion Models with Reward-Driven Optimization",
+   "short": "AssetDropper",
+   "authors": "Lanjiong Li et al.",
+   "year": 2025,
+   "venue": "SIGGRAPH 2025",
+   "category": "decomposition",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2506.07738",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2505.23740",
+   "title": "LayerPeeler: Autoregressive Peeling for Layer-wise Image Vectorization",
+   "short": "LayerPeeler",
+   "authors": "Ronghuan Wu, Wanchao Su, Jing Liao",
+   "year": 2025,
+   "venue": "SIGGRAPH Asia 2025",
+   "category": "design",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2505.23740",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2406.07706",
+   "title": "Object-level Scene Deocclusion",
+   "authors": "Zhengzhe Liu et al.",
+   "year": 2024,
+   "venue": "SIGGRAPH 2024",
+   "category": "decomposition",
+   "tags": [
+    "image",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2406.07706",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2411.10913",
+   "title": "Generating Compositional Scenes via Text-to-image RGBA Instance Generation",
+   "authors": "Alessandro Fontanella et al.",
+   "year": 2024,
+   "venue": "NeurIPS 2024",
+   "category": "generation",
+   "tags": [
+    "image",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2411.10913",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2404.07178",
+   "title": "Move Anything with Layered Scene Diffusion",
+   "authors": "Jiawei Ren et al.",
+   "year": 2024,
+   "venue": "CVPR 2024",
+   "category": "editing",
+   "tags": [
+    "image"
+   ],
+   "arxiv": "https://arxiv.org/abs/2404.07178",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2409.13690",
+   "title": "Colorful Diffuse Intrinsic Image Decomposition in the Wild",
+   "authors": "Chris Careaga, Yağız Aksoy",
+   "year": 2024,
+   "venue": "SIGGRAPH Asia 2024 (TOG)",
+   "category": "decomposition",
+   "tags": [
+    "image",
+    "light"
+   ],
+   "arxiv": "https://arxiv.org/abs/2409.13690",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2405.00666",
+   "title": "RGB↔X: Image Decomposition and Synthesis Using Material- and Lighting-aware Diffusion Models",
+   "short": "RGB↔X",
+   "authors": "Zheng Zeng et al.",
+   "year": 2024,
+   "venue": "SIGGRAPH 2024",
+   "category": "decomposition",
+   "tags": [
+    "image",
+    "light"
+   ],
+   "arxiv": "https://arxiv.org/abs/2405.00666",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2301.13173",
+   "title": "Shape-aware Text-driven Layered Video Editing",
+   "authors": "Yao-Chih Lee et al.",
+   "year": 2023,
+   "venue": "CVPR 2023",
+   "category": "video",
+   "tags": [
+    "video"
+   ],
+   "arxiv": "https://arxiv.org/abs/2301.13173",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2311.12792",
+   "title": "Intrinsic Image Decomposition via Ordinal Shading",
+   "authors": "Chris Careaga, Yağız Aksoy",
+   "year": 2023,
+   "venue": "TOG 2023",
+   "category": "decomposition",
+   "tags": [
+    "image",
+    "light"
+   ],
+   "arxiv": "https://arxiv.org/abs/2311.12792",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2503.11633",
+   "title": "Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation",
+   "authors": "Hongyu Wen et al.",
+   "year": 2025,
+   "venue": "ICCV 2025",
+   "category": "data",
+   "tags": [
+    "image",
+    "3d",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2503.11633",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "magick",
+   "title": "MAGICK: A Large-scale Captioned Dataset from Matting Generated Images using Chroma Keying",
+   "short": "MAGICK",
+   "authors": "Ryan D. Burgert, Brian L. Price, Jason Kuen, Yijun Li, Michael S. Ryoo",
+   "year": 2024,
+   "venue": "CVPR 2024",
+   "category": "data",
+   "tags": [
+    "image",
+    "transparency"
+   ],
+   "project": "https://ryanndagreat.github.io/MAGICK",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2601.15507",
+   "title": "A Unified and Controllable Framework for Layered Image Generation with Visual Effects",
+   "short": "LASAGNA",
+   "authors": "Jinrui Yang et al.",
+   "year": 2026,
+   "venue": "arXiv",
+   "category": "generation",
+   "tags": [
+    "image",
+    "foreground",
+    "background",
+    "shadow",
+    "reflection"
+   ],
+   "arxiv": "https://arxiv.org/abs/2601.15507",
+   "project": "https://rayjryang.github.io/LASAGNA-Page",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "ic-light",
+   "title": "Scaling In-the-Wild Training for Diffusion-based Illumination Harmonization and Editing by Imposing Consistent Light Transport",
+   "short": "IC-Light",
+   "authors": "Lvmin Zhang, Anyi Rao, Maneesh Agrawala",
+   "year": 2025,
+   "venue": "ICLR 2025",
+   "category": "composition",
+   "tags": [
+    "image",
+    "fine-tuned",
+    "light",
+    "foreground",
+    "background"
+   ],
+   "code": "https://github.com/lllyasviel/IC-Light",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2412.11972",
+   "title": "Controllable Shadow Generation with Single-Step Diffusion Models from Synthetic Data",
+   "authors": "Onur Tasar, Clément Chadebec, Benjamin Aubin",
+   "year": 2025,
+   "venue": "arXiv",
+   "category": "composition",
+   "tags": [
+    "image",
+    "fine-tuned",
+    "shadow",
+    "light"
+   ],
+   "arxiv": "https://arxiv.org/abs/2412.11972",
+   "project": "https://gojasper.github.io/controllable-shadow-generation-project",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2212.00932",
+   "title": "ObjectStitch: Generative Object Compositing",
+   "short": "ObjectStitch",
+   "authors": "Yizhi Song et al.",
+   "year": 2023,
+   "venue": "CVPR 2023",
+   "category": "composition",
+   "tags": [
+    "image",
+    "fine-tuned",
+    "foreground",
+    "background"
+   ],
+   "arxiv": "https://arxiv.org/abs/2212.00932",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2411.07232",
+   "title": "Add-it: Training-Free Object Insertion in Images With Pretrained Diffusion Models",
+   "short": "Add-it",
+   "authors": "Yoad Tewel, Rinon Gal, Dvir Samuel, Yuval Atzmon, Lior Wolf, Gal Chechik",
+   "year": 2025,
+   "venue": "ICLR 2025",
+   "category": "composition",
+   "tags": [
+    "image",
+    "training-free",
+    "foreground",
+    "shadow"
+   ],
+   "arxiv": "https://arxiv.org/abs/2411.07232",
+   "added": "2026-11-22"
+  },
+  {
+   "id": "2204.02491",
+   "title": "Text2LIVE: Text-Driven Layered Image and Video Editing",
+   "short": "Text2LIVE",
+   "authors": "Omer Bar-Tal, Dolev Ofri-Amar, Rafail Fridman, Yoni Kasten, Tali Dekel",
+   "year": 2022,
+   "venue": "ECCV 2022",
+   "category": "editing",
+   "tags": [
+    "image",
+    "video",
+    "transparency"
+   ],
+   "arxiv": "https://arxiv.org/abs/2204.02491",
+   "added": "2026-11-22"
+  }
+ ],
+ "datasets": [
+  {
+   "id": "mulan",
+   "name": "MuLAn",
+   "paper": "2404.02790",
+   "modality": "image",
+   "content": "Natural images (COCO / LAION Aesthetics) decomposed into a background + instance RGBA layer stack with captions",
+   "size": "44K+ images, 100K+ instances",
+   "status": "public",
+   "url": "https://huggingface.co/datasets/mulan-dataset/v1.0",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "prismlayerspro",
+   "name": "PrismLayersPro",
+   "paper": "2505.22523",
+   "modality": "image",
+   "content": "Synthetic multi-layer transparent images; up to 50 RGBA layers per sample, each with caption and bounding box, plus whole image and base layer",
+   "size": "20,046 samples (21 style categories)",
+   "status": "public",
+   "url": "https://huggingface.co/datasets/creative-graphic-design/PrismLayersPro",
+   "license": "Apache-2.0",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "magick",
+   "name": "MAGICK",
+   "paper": "magick",
+   "modality": "image",
+   "content": "Single-subject generated RGBA images (alpha via chroma keying) with captions",
+   "size": "140K+ images, 1024x1024",
+   "status": "public",
+   "url": "https://huggingface.co/datasets/OneOverZero/MAGICK",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "crello",
+   "name": "Crello",
+   "paper": "https://arxiv.org/abs/2108.01249",
+   "modality": "design",
+   "content": "Graphic design templates with per-element layers (pre-rendered images / text boxes) and canvas metadata",
+   "size": "10K–100K documents",
+   "status": "public",
+   "url": "https://huggingface.co/datasets/cyberagent/crello",
+   "license": "CDLA-Permissive-2.0",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "vidlayer",
+   "name": "VidLayer",
+   "paper": "2508.04228",
+   "modality": "video",
+   "content": "Raw video, background-only video, foreground video and foreground masks, with layer-level captions",
+   "size": "~50K samples (from 200K source clips)",
+   "status": "public",
+   "url": "https://huggingface.co/datasets/kr-cen/VidLayer",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "layereddepth",
+   "name": "LayeredDepth",
+   "paper": "2503.11633",
+   "modality": "3d",
+   "content": "Multi-layer (through-glass) relative depth; real benchmark with human annotations + procedural synthetic set",
+   "size": "1,500 real images; 15,300 synthetic images",
+   "status": "public",
+   "url": "https://layereddepth.cs.princeton.edu",
+   "license": "CC0 (images and validation annotations)",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "reveallayer-100k",
+   "name": "RevealLayer-100K / RevealLayerBench",
+   "paper": "2605.11818",
+   "modality": "image",
+   "content": "Natural images with background + per-object RGBA layers (visible and occluded parts) and boxes",
+   "size": "100K training tuples; 200-sample benchmark",
+   "status": "announced",
+   "url": "https://360cvgroup.github.io/RevealLayer/",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "reflade",
+   "name": "RefLade",
+   "paper": "2602.19358",
+   "modality": "image",
+   "content": "Image–RGBA layer–prompt triplets for prompt-conditioned layer decomposition",
+   "size": "430K images, 1.11M layers (incl. 100K curated, 10K test)",
+   "status": "announced",
+   "url": "https://yaojie-shen.github.io/project/RLD",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "liwi-100k",
+   "name": "LiWi-100k",
+   "paper": "2605.14552",
+   "modality": "image",
+   "content": "In-the-wild photos decomposed into layers with shadows / lighting effects kept",
+   "size": "100K+ images",
+   "status": "announced",
+   "url": "https://rassetmusty.github.io/LiWi",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "alphablend",
+   "name": "AlphaBlend",
+   "paper": "2505.21541",
+   "modality": "image",
+   "content": "Semi-transparent / transparent layer decomposition across six subtasks (flare, fog, glassware, X-ray, ...)",
+   "status": "announced",
+   "url": "https://github.com/Wangzt1121/DiffDecompose",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "lasagna-48k",
+   "name": "LASAGNA-48K / LasagnaBench",
+   "paper": "2601.15507",
+   "modality": "image",
+   "content": "Composite + clean background + foreground layer with visual effects (shadows, reflections) and captions",
+   "size": "48K triplets; 242-image human-decomposed benchmark",
+   "status": "announced",
+   "url": "https://rayjryang.github.io/LASAGNA-Page",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "alphalayers",
+   "name": "AlphaLayers",
+   "paper": "2511.20211",
+   "modality": "image",
+   "content": "Foreground / background / composite RGBA triplets with masks and captions",
+   "size": "1,000 triplets (512x512)",
+   "status": "unknown",
+   "url": "https://github.com/Longin-Yu/OmniAlpha",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "synlayers",
+   "name": "SynLayers",
+   "paper": "2605.15167",
+   "modality": "design",
+   "content": "Fully synthetic layered graphic-design data (code and model are public; dataset link not found)",
+   "status": "unknown",
+   "url": "https://yanghaolin0526.github.io/SynLayers/",
+   "checked": "2026-11-22"
+  },
+  {
+   "id": "shadow-gen-bench",
+   "name": "Controllable Shadow Generation benchmark",
+   "paper": "2412.11972",
+   "modality": "image",
+   "content": "Object images with shadow maps under varied light direction / softness / intensity",
+   "status": "unknown",
+   "url": "https://gojasper.github.io/controllable-shadow-generation-project",
+   "checked": "2026-11-22"
+  }
+ ]
+}
