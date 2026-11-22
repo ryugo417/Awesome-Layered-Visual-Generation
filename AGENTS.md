@@ -14,11 +14,14 @@ Owner / maintainer: Ryugo Morita (ryugo417). Report recipient: ryugo417@gmail.co
 ## Steps
 1. **Load state.** Read `state/last_run.json` (`last_checked` date) and `config/search.yaml`. Run `python scripts/validate.py --list-ids` to get existing IDs.
 2. **Collect candidates** submitted since `last_checked` (on Monday this covers Fri–Sun):
-   - For each `arxiv_queries` entry, WebFetch `https://export.arxiv.org/api/query?search_query=<URL-encoded query>&sortBy=submittedDate&sortOrder=descending&max_results=50`.
+   - The arXiv API (export.arxiv.org) is NOT reachable from this environment. Instead, WebFetch the daily listings
+     `https://arxiv.org/list/cs.CV/new` and `https://arxiv.org/list/cs.GR/new` (page through with the `offset` the tool returns),
+     asking for every entry whose title/abstract matches the topics in `config/search.yaml` (`arxiv_queries` are keyword hints).
+     On Monday also check `https://arxiv.org/list/cs.CV/pastweek?show=2000` for anything missed over the weekend.
    - Skim the `web_sources` (Hugging Face daily papers, a couple of WebSearches).
    - Deduplicate by arXiv ID and by normalized title against existing entries.
 3. **Screen** each candidate against `include_if` / `exclude_if`. Open the abstract page for every candidate you keep.
-4. **Verify old entries.** For up to 5 entries with `needs_check: true`, open their arXiv page, fix any wrong field, then remove `needs_check`.
+4. **Verify old entries.** For up to 5 entries with `needs_check: true`, check the venue on the CVF open-access page / conference site / project page (arXiv often has no venue). Fix any wrong field, then remove `needs_check`. If the venue cannot be confirmed, set it to "arXiv" and remove `needs_check`.
 4b. **Backfill (until the list has 100 papers).** Also add up to 5 important OLDER papers per day that are missing (follow related-work sections and citation graphs of existing entries). Report them in a separate section "既存研究の補充" with a 2–3 line summary each (no full 落合フォーマット needed).
 5. **Add entries** to `data/papers.yaml` (fields: see the header of that file; `added` = today). Pick one `category`; tags only from `data/categories.yaml`. Respect `max_new_per_day` (keep the most relevant).
 6. **Build & validate:** `python scripts/validate.py && python scripts/build_readme.py`. Fix any error before continuing.

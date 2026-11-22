@@ -191,8 +191,9 @@ papers:
     title: "LayerFusion: Harmonized Multi-Layer Text-to-Image Generation with Generative Priors"
     short: LayerFusion
     authors: "Yusuf Dalva et al."
-    year: 2024
-    venue: "arXiv"
+    year: 2026
+    venue: "CVPR 2026 Findings"
+    needs_check: true
     category: generation
     tags: [image, training-free, transparency, foreground, background]
     arxiv: https://arxiv.org/abs/2412.04460
@@ -238,8 +239,9 @@ papers:
     title: "PSDiffusion: Harmonized Multi-Layer Image Generation via Layout and Appearance Alignment"
     short: PSDiffusion
     authors: "Dingbang Huang et al."
-    year: 2025
-    venue: "arXiv"
+    year: 2026
+    venue: "WACV 2026"
+    needs_check: true
     category: generation
     tags: [image, fine-tuned, transparency]
     arxiv: https://arxiv.org/abs/2505.11468
@@ -299,7 +301,8 @@ papers:
     short: LaDe
     authors: "Vlad-Constantin Lungu-Stan, Ionuţ Mironică, Mariana-Iuliana Georgescu"
     year: 2026
-    venue: "arXiv"
+    venue: "CVPR 2026 Workshops"
+    needs_check: true
     category: design
     tags: [image, transparency, text]
     arxiv: https://arxiv.org/abs/2603.17965
@@ -375,4 +378,395 @@ papers:
     tags: [video, fine-tuned, transparency]
     arxiv: https://arxiv.org/abs/2509.24979
     project: https://donghaotian123.github.io/Wan-Alpha
+    added: 2026-11-22
+
+  # ---- from Notion Paper DB (Topic: Layered Image / Image Decompose), titles & authors verified on arXiv 2026-11-22 ----
+  - id: "2505.21541"
+    title: "DiffDecompose: Layer-Wise Decomposition of Alpha-Composited Images via Diffusion Transformers"
+    short: DiffDecompose
+    authors: "Zitong Wang et al."
+    year: 2026
+    venue: "CVPR 2026"
+    category: decomposition
+    tags: [image, transparency]
+    arxiv: https://arxiv.org/abs/2505.21541
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2512.03335"
+    title: "Step-by-step Layered Design Generation"
+    authors: "Faizan Farooq Khan et al."
+    year: 2026
+    venue: "AAAI 2026"
+    category: design
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2512.03335
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2604.19632"
+    title: "CreatiParser: Generative Image Parsing of Raster Graphic Designs into Editable Layers"
+    short: CreatiParser
+    authors: "Weidong Chen et al."
+    year: 2026
+    venue: "arXiv"
+    category: design
+    tags: [image, text]
+    arxiv: https://arxiv.org/abs/2604.19632
+    added: 2026-11-22
+
+  - id: "2605.14552"
+    title: "LiWi: Layering in the Wild"
+    short: LiWi
+    authors: "Yu He et al."
+    year: 2026
+    venue: "arXiv"
+    category: decomposition
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2605.14552
+    added: 2026-11-22
+
+  - id: "2602.19358"
+    title: "Referring Layer Decomposition"
+    authors: "Fangyi Chen et al."
+    year: 2026
+    venue: "ICLR 2026"
+    category: decomposition
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2602.19358
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2605.27235"
+    title: "MRT: Masked Region Transformer for Layered Image Generation and Editing at Scale"
+    short: MRT
+    authors: "Zhicong Tang et al."
+    year: 2026
+    venue: "CVPR 2026"
+    category: generation
+    tags: [image, transparency]
+    arxiv: https://arxiv.org/abs/2605.27235
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2512.14336"
+    title: "Vector Prism: Animating Vector Graphics by Stratifying Semantic Structure"
+    short: Vector Prism
+    authors: "Jooyeol Yun, Jaegul Choo"
+    year: 2026
+    venue: "CVPR 2026"
+    category: design
+    tags: [video]
+    arxiv: https://arxiv.org/abs/2512.14336
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2603.25738"
+    title: "PSDesigner: Automated Graphic Design with a Human-Like Creative Workflow"
+    short: PSDesigner
+    authors: "Xincheng Shuai et al."
+    year: 2026
+    venue: "CVPR 2026"
+    category: design
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2603.25738
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2511.20996"
+    title: "From Inpainting to Layer Decomposition: Repurposing Generative Inpainting Models for Image Layer Decomposition"
+    authors: "Jingxi Chen et al."
+    year: 2026
+    venue: "CVPR 2026"
+    category: decomposition
+    tags: [image, foreground, background]
+    arxiv: https://arxiv.org/abs/2511.20996
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2602.20989"
+    title: "Cycle-Consistent Tuning for Layered Image Decomposition"
+    authors: "Zheng Gu et al."
+    year: 2026
+    venue: "CVPR 2026"
+    category: decomposition
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2602.20989
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2603.14925"
+    title: "Workflow-Aware Structured Layer Decomposition for Illustration Production"
+    authors: "Tianyu Zhang, Dongchi Li, Keiichi Sawada, Haoran Xie"
+    year: 2026
+    venue: "arXiv"
+    category: decomposition
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2603.14925
+    added: 2026-11-22
+
+  - id: "2603.24039"
+    title: "SemLayer: Semantic-aware Generative Segmentation and Layer Construction for Abstract Icons"
+    short: SemLayer
+    authors: "Haiyang Xu et al."
+    year: 2026
+    venue: "CVPR 2026"
+    category: design
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2603.24039
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2605.11818"
+    title: "RevealLayer: Disentangling Hidden and Visible Layers via Occlusion-Aware Image Decomposition"
+    short: RevealLayer
+    authors: "Binhao Wang et al."
+    year: 2026
+    venue: "ICML 2026"
+    category: decomposition
+    tags: [image, foreground, background]
+    arxiv: https://arxiv.org/abs/2605.11818
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2605.15167"
+    title: "Does Synthetic Layered Design Data Benefit Layered Design Decomposition?"
+    authors: "Kam Man Wu et al."
+    year: 2026
+    venue: "arXiv"
+    category: design
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2605.15167
+    added: 2026-11-22
+
+  - id: "2602.03749"
+    title: "See-through: Single-image Layer Decomposition for Anime Characters"
+    short: See-through
+    authors: "Jian Lin et al."
+    year: 2026
+    venue: "arXiv"
+    category: decomposition
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2602.03749
+    added: 2026-11-22
+
+  - id: "2605.30257"
+    title: "Stable-Layers: Fine-Tuning Image Layer Decomposition Models with VLM-Scored Reinforcement Learning"
+    short: Stable-Layers
+    authors: "Ciara Rowles et al."
+    year: 2026
+    venue: "arXiv"
+    category: decomposition
+    tags: [image, fine-tuned]
+    arxiv: https://arxiv.org/abs/2605.30257
+    added: 2026-11-22
+
+  - id: "2606.23610"
+    title: "Vera: A Layered Diffusion Model for Content-Preserving Video Editing"
+    short: Vera
+    authors: "Hongkai Zheng et al."
+    year: 2026
+    venue: "arXiv"
+    category: video
+    tags: [video]
+    arxiv: https://arxiv.org/abs/2606.23610
+    added: 2026-11-22
+
+  - id: "2508.04228"
+    title: "LayerT2V: A Unified Multi-Layer Video Generation Framework"
+    short: LayerT2V
+    authors: "Guangzhao Li et al."
+    year: 2025
+    venue: "arXiv"
+    category: video
+    tags: [video, foreground, background]
+    arxiv: https://arxiv.org/abs/2508.04228
+    added: 2026-11-22
+
+  - id: "2503.12838"
+    title: "DreamLayer: Simultaneous Multi-Layer Generation via Diffusion Model"
+    short: DreamLayer
+    authors: "Junjia Huang et al."
+    year: 2025
+    venue: "ICCV 2025"
+    category: generation
+    tags: [image, transparency]
+    arxiv: https://arxiv.org/abs/2503.12838
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2511.08251"
+    title: "LayerEdit: Disentangled Multi-Object Editing via Conflict-Aware Multi-Layer Learning"
+    short: LayerEdit
+    authors: "Fengyi Fu, Mengqi Huang, Lei Zhang, Zhendong Mao"
+    year: 2026
+    venue: "AAAI 2026"
+    category: editing
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2511.08251
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2508.07647"
+    title: "LaRender: Training-Free Occlusion Control in Image Generation via Latent Rendering"
+    short: LaRender
+    authors: "Xiaohang Zhan, Dingming Liu"
+    year: 2025
+    venue: "ICCV 2025"
+    category: generation
+    tags: [image, training-free]
+    arxiv: https://arxiv.org/abs/2508.07647
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2511.16249"
+    title: "Controllable Layer Decomposition for Reversible Multi-Layer Image Generation"
+    authors: "Zihao Liu et al."
+    year: 2025
+    venue: "arXiv"
+    category: decomposition
+    tags: [image, transparency]
+    arxiv: https://arxiv.org/abs/2511.16249
+    added: 2026-11-22
+
+  - id: "2512.09247"
+    title: "OmniPSD: Layered PSD Generation with Diffusion Transformer"
+    short: OmniPSD
+    authors: "Cheng Liu, Yiren Song, Haofan Wang, Mike Zheng Shou"
+    year: 2025
+    venue: "arXiv"
+    category: design
+    tags: [image, transparency]
+    arxiv: https://arxiv.org/abs/2512.09247
+    added: 2026-11-22
+
+  - id: "2507.09308"
+    title: "AlphaVAE: Unified End-to-End RGBA Image Reconstruction and Generation with Alpha-Aware Representation Learning"
+    short: AlphaVAE
+    authors: "Zile Wang, Hao Yu, Jiabo Zhan, Chun Yuan"
+    year: 2025
+    venue: "arXiv"
+    category: generation
+    tags: [image, transparency]
+    arxiv: https://arxiv.org/abs/2507.09308
+    added: 2026-11-22
+
+  - id: "2511.20211"
+    title: "OmniAlpha: Aligning Transparency-Aware Generation via Multi-Task Unified Reinforcement Learning"
+    short: OmniAlpha
+    authors: "Hao Yu et al."
+    year: 2025
+    venue: "arXiv"
+    category: generation
+    tags: [image, transparency]
+    arxiv: https://arxiv.org/abs/2511.20211
+    added: 2026-11-22
+
+  - id: "2506.07738"
+    title: "AssetDropper: Asset Extraction via Diffusion Models with Reward-Driven Optimization"
+    short: AssetDropper
+    authors: "Lanjiong Li et al."
+    year: 2025
+    venue: "SIGGRAPH 2025"
+    category: decomposition
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2506.07738
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2505.23740"
+    title: "LayerPeeler: Autoregressive Peeling for Layer-wise Image Vectorization"
+    short: LayerPeeler
+    authors: "Ronghuan Wu, Wanchao Su, Jing Liao"
+    year: 2025
+    venue: "SIGGRAPH Asia 2025"
+    category: design
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2505.23740
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2406.07706"
+    title: "Object-level Scene Deocclusion"
+    authors: "Zhengzhe Liu et al."
+    year: 2024
+    venue: "SIGGRAPH 2024"
+    category: decomposition
+    tags: [image, foreground, background]
+    arxiv: https://arxiv.org/abs/2406.07706
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2411.10913"
+    title: "Generating Compositional Scenes via Text-to-image RGBA Instance Generation"
+    authors: "Alessandro Fontanella et al."
+    year: 2024
+    venue: "NeurIPS 2024"
+    category: generation
+    tags: [image, transparency]
+    arxiv: https://arxiv.org/abs/2411.10913
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2404.07178"
+    title: "Move Anything with Layered Scene Diffusion"
+    authors: "Jiawei Ren et al."
+    year: 2024
+    venue: "CVPR 2024"
+    category: editing
+    tags: [image]
+    arxiv: https://arxiv.org/abs/2404.07178
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2409.13690"
+    title: "Colorful Diffuse Intrinsic Image Decomposition in the Wild"
+    authors: "Chris Careaga, Yağız Aksoy"
+    year: 2024
+    venue: "SIGGRAPH Asia 2024 (TOG)"
+    category: decomposition
+    tags: [image, light]
+    arxiv: https://arxiv.org/abs/2409.13690
+    added: 2026-11-22
+
+  - id: "2405.00666"
+    title: "RGB↔X: Image Decomposition and Synthesis Using Material- and Lighting-aware Diffusion Models"
+    short: RGB↔X
+    authors: "Zheng Zeng et al."
+    year: 2024
+    venue: "SIGGRAPH 2024"
+    category: decomposition
+    tags: [image, light]
+    arxiv: https://arxiv.org/abs/2405.00666
+    added: 2026-11-22
+
+  - id: "2301.13173"
+    title: "Shape-aware Text-driven Layered Video Editing"
+    authors: "Yao-Chih Lee et al."
+    year: 2023
+    venue: "CVPR 2023"
+    category: video
+    tags: [video]
+    arxiv: https://arxiv.org/abs/2301.13173
+    added: 2026-11-22
+    needs_check: true   # venue taken from Notion, not stated on arXiv
+
+  - id: "2311.12792"
+    title: "Intrinsic Image Decomposition via Ordinal Shading"
+    authors: "Chris Careaga, Yağız Aksoy"
+    year: 2023
+    venue: "TOG 2023"
+    category: decomposition
+    tags: [image, light]
+    arxiv: https://arxiv.org/abs/2311.12792
+    added: 2026-11-22
+
+  - id: "2503.11633"
+    title: "Seeing and Seeing Through the Glass: Real and Synthetic Data for Multi-Layer Depth Estimation"
+    authors: "Hongyu Wen et al."
+    year: 2025
+    venue: "arXiv"
+    category: data
+    tags: [image, 3d, transparency]
+    arxiv: https://arxiv.org/abs/2503.11633
     added: 2026-11-22
