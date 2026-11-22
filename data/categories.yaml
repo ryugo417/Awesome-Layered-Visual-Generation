@@ -1,0 +1,33 @@
+# Taxonomy. Order here = order in README.
+# Each paper has exactly one `category` (primary) and any number of `tags`.
+categories:
+  - id: generation
+    title: Layered Image Generation
+    description: Generating transparent (RGBA) images or multiple layers directly from text / conditions.
+  - id: decomposition
+    title: Image Layer Decomposition
+    description: Decomposing a flat RGB image into layers (foreground/background, instances, effects such as shadows and reflections).
+  - id: composition
+    title: Layer Composition & Harmonization
+    description: Inserting / compositing objects or layers into scenes, including shadow, reflection and lighting synthesis.
+  - id: editing
+    title: Layer-aware Editing
+    description: Editing that operates on, or produces, layered representations.
+  - id: video
+    title: Layered Video Generation & Decomposition
+    description: RGBA video generation, omnimatte-style video layer decomposition, layered video editing.
+  - id: design
+    title: Graphic Design / Vector Layers
+    description: Layered graphic design, posters, PSD/SVG-style layered outputs.
+  - id: data
+    title: Datasets & Benchmarks
+    description: Multi-layer datasets, benchmarks and evaluation protocols.
+  - id: survey
+    title: Surveys
+    description: Survey and overview papers.
+
+# Orthogonal tags (free to combine)
+tags:
+  modality: [image, video, 3d]
+  training: [training-free, fine-tuned, trained-from-scratch]
+  element: [foreground, background, light, shadow, reflection, transparency, text]

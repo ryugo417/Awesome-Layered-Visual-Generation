@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this list, please cite it as below."
+title: "Awesome Layered Visual Generation"
+type: dataset
+authors:
+  - family-names: Morita
+    given-names: Ryugo
+repository-code: "https://github.com/ryugo417/Awesome-Layered-Visual-Generation"
+license: CC0-1.0
+date-released: 2026-11-22

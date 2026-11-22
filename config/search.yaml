@@ -1,0 +1,36 @@
+# Search configuration for the daily update agent (see AGENTS.md).
+
+# arXiv API queries (fetch via WebFetch:
+#   https://export.arxiv.org/api/query?search_query=<QUERY>&sortBy=submittedDate&sortOrder=descending&max_results=50 )
+arxiv_queries:
+  - 'abs:"layered image generation"'
+  - 'abs:"layer decomposition" AND cat:cs.CV'
+  - 'abs:"image layers" AND abs:diffusion'
+  - 'abs:"multi-layer" AND abs:transparent'
+  - 'abs:RGBA AND (abs:generation OR abs:decomposition)'
+  - 'abs:"transparent image" AND abs:diffusion'
+  - 'abs:omnimatte'
+  - 'abs:"video layer" AND (abs:decomposition OR abs:generation)'
+  - 'abs:"layered video"'
+  - 'abs:"object insertion" AND (abs:shadow OR abs:reflection)'
+  - 'abs:"image composition" AND abs:diffusion AND abs:layer'
+  - 'abs:"amodal completion" AND abs:diffusion'
+  - 'abs:"graphic design" AND abs:layer AND abs:generation'
+
+# Additional web sources to skim (WebSearch / WebFetch)
+web_sources:
+  - https://huggingface.co/papers   # daily papers
+  - "WebSearch: layered image generation arXiv (this week)"
+  - "WebSearch: RGBA video generation arXiv (this week)"
+
+# Inclusion criteria (ALL papers must satisfy at least one)
+include_if:
+  - Outputs, consumes, or explicitly models multiple image/video LAYERS (incl. RGBA/alpha layers)
+  - Decomposes an image or video into foreground/background/instance/effect layers
+  - Composes layers with physically plausible effects (shadow, reflection, lighting) in a layer-aware way
+  - Proposes a dataset / benchmark / metric for the above
+exclude_if:
+  - '"layer" only refers to neural-network layers (e.g., layer pruning, layer-wise attention analysis)'
+  - Plain image matting / segmentation with no generative or layered-composition aspect
+  - Generic image editing with no layer representation
+max_new_per_day: 15

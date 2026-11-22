@@ -1,0 +1,38 @@
+name: Add a paper
+description: Suggest a paper for the list
+title: "[Add] "
+labels: [add-paper]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Paper title
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: arXiv / paper link
+    validations:
+      required: true
+  - type: input
+    id: venue
+    attributes:
+      label: Venue (e.g. CVPR 2025, or arXiv)
+  - type: input
+    id: code
+    attributes:
+      label: Code / project page (optional)
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Layered Image Generation
+        - Image Layer Decomposition
+        - Layer Composition & Harmonization
+        - Layer-aware Editing
+        - Layered Video Generation & Decomposition
+        - Graphic Design / Vector Layers
+        - Datasets & Benchmarks
+        - Surveys
