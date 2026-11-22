@@ -155,16 +155,15 @@ def render(cats, papers, datasets=()):
             lines.append("")
             continue
         items.sort(key=lambda p: (-int(p["year"]), str(p["title"]).lower()))
-        lines.append("| Year | Venue | Title | Links | Tags |")
-        lines.append("|---|---|---|---|---|")
+        lines.append("| Year | Venue | Title | Links |")
+        lines.append("|---|---|---|---|")
         for p in items:
             title = esc(p["title"])
             if p.get("short") and p["short"].lower() not in p["title"].lower():
                 title = f"**{esc(p['short'])}**: {title}"
             if p.get("code"):
                 title = f"{title} 💻"
-            tags = " ".join(f"`{t}`" for t in p.get("tags", []))
-            lines.append(f"| {p['year']} | {esc(p['venue'])} | {title} | {links(p)} | {tags} |")
+            lines.append(f"| {p['year']} | {esc(p['venue'])} | {title} | {links(p)} |")
         lines.append("")
 
     lines += render_datasets(datasets, papers)

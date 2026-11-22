@@ -80,7 +80,6 @@
       <label class="check"><input type="checkbox" id="code"> Code only</label>
     </div>
     <div class="chips" id="cats"></div>
-    <div class="chips" id="tags"></div>
     <div class="count" id="count"></div>
     <div class="list" id="list"></div>
   </section>
@@ -153,7 +152,7 @@ function renderPapers() {
       <h3>${short}${esc(p.title)}</h3>
       <div class="meta"><span class="venue">${esc(p.venue)}</span><span>${esc(p.authors)}</span>
         <span>${esc(catTitle[p.category] || p.category)}</span>
-        ${(p.tags || []).map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+</div>
       <div class="links">${links}</div></article>`;
   }).join("") : `<div class="empty">No papers match these filters.</div>`;
 }
@@ -200,8 +199,6 @@ fetch("data.json").then((r) => r.json()).then((d) => {
     const n = d.papers.filter((p) => p.category === c.id).length;
     if (n) $("#cats").append(chip(`${c.title} (${n})`, state.cats, c.id, renderPapers));
   }
-  const tags = [...new Set(d.papers.flatMap((p) => p.tags || []))].sort();
-  for (const t of tags) $("#tags").append(chip(t, state.tags, t, renderPapers));
   for (const y of [...new Set(d.papers.map((p) => p.year))].sort((a, b) => b - a))
     $("#year").insertAdjacentHTML("beforeend", `<option>${y}</option>`);
   for (const m of [...new Set(d.datasets.map((x) => x.modality))].sort())
